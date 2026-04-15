@@ -1,3 +1,8 @@
+/* Hero Block - Merkle Design System
+ * Full-width hero with background image/video, overlaid text, and CTAs
+ * Matches merkle.com dark hero pattern
+ */
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -5,23 +10,55 @@
 
 .hero {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
+  padding: var(--spacing-xl) var(--spacing-m);
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  background-color: #000;
+  color: #fff;
+  overflow: hidden;
 }
 
-.hero h1 {
-  max-width: 1200px;
+.hero h1,
+.hero h2 {
+  max-width: var(--content-max-width);
   margin-left: auto;
   margin-right: auto;
-  color: var(--background-color);
+  color: #fff;
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 400;
+  line-height: var(--heading-line-height);
+}
+
+.hero p {
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.hero .button-wrapper {
+  margin-top: var(--spacing-m);
+}
+
+.hero a.button:any-link {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+.hero a.button.secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--brand-red);
 }
 
 .hero picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero img {
@@ -30,8 +67,26 @@
   height: 100%;
 }
 
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+@media (width >= 600px) {
+  .hero {
+    min-height: 480px;
+    padding: var(--spacing-xl) var(--spacing-m);
+  }
+}
+
 @media (width >= 900px) {
   .hero {
-    padding: 40px 32px;
+    min-height: 560px;
+    padding: var(--spacing-xxl) var(--spacing-l);
+  }
+
+  .hero h1,
+  .hero h2 {
+    font-size: var(--heading-font-size-xxl);
   }
 }

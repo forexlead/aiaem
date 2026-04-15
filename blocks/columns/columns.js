@@ -2,6 +2,18 @@ export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
+  // Fix broken Scene7 image URLs with template variables
+  block.querySelectorAll('img').forEach((img) => {
+    if (img.src === 'about:error' || img.naturalWidth === 0) {
+      const src = img.closest('picture')?.querySelector('source')?.srcset;
+      const original = src || img.getAttribute('src') || '';
+      if (original.includes('%7B.width%7D') || original.includes('{.width}')) {
+        const [cleanUrl] = original.split('?');
+        img.src = cleanUrl;
+      }
+    }
+  });
+
   // setup image columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {

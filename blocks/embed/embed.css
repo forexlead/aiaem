@@ -1,0 +1,12 @@
+/* Embed Block - Merkle Design System */
+
+.embed {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.embed-video {
+  width: 100%;
+  display: block;
+  border-radius: var(--border-radius-md);
+}

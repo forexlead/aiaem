@@ -1,1 +1,58 @@
-/* add global styles that can be loaded post LCP here */
+/* Merkle Design System - Post-LCP Global Styles
+ * These styles load after Largest Contentful Paint for performance.
+ */
+
+/* ========================================
+   SMOOTH SCROLL (non-critical)
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background-color: var(--brand-navy);
+  color: #fff;
+}
+
+/* ========================================
+   FOCUS STYLES (enhanced)
+   ======================================== */
+
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* ========================================
+   ANIMATION UTILITIES
+   ======================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   DARK SECTION LINK HOVER (non-critical)
+   ======================================== */
+
+main .section.dark a:any-link:not(.button):hover {
+  opacity: 0.8;
+}
+
+main .section.navy a:any-link:not(.button):hover {
+  opacity: 0.8;
+}

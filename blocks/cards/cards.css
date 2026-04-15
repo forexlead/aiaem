@@ -1,19 +1,38 @@
+/* Cards Block - Merkle Design System
+ * Content card grid with image, category label, heading, and link
+ */
+
 .cards > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
 }
 
 .cards > ul > li {
-  border: 1px solid #dadada;
   background-color: var(--background-color);
+  overflow: hidden;
 }
 
 .cards .cards-card-body {
-  margin: 16px;
+  padding: var(--spacing-s);
+}
+
+.cards .cards-card-body p {
+  margin: 0 0 var(--spacing-xs);
+  font-size: var(--body-font-size-s);
+  color: var(--brand-grey);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.cards .cards-card-body h3 {
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .cards .cards-card-image {
@@ -22,6 +41,38 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.cards > ul > li a:any-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.cards > ul > li a:hover {
+  opacity: 0.85;
+}
+
+/* Dark section cards */
+.dark .cards > ul > li {
+  background-color: transparent;
+}
+
+.dark .cards .cards-card-body h3 {
+  color: #fff;
+}
+
+@media (width >= 600px) {
+  .cards > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-l);
+  }
 }
