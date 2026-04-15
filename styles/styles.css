@@ -538,20 +538,6 @@ main .section.dark hr {
   border-top-color: rgb(255 255 255 / 30%);
 }
 
-/* Remove margin between adjacent dark sections */
-main .section.dark + .section,
-main .section + .section.dark {
-  margin-top: 0;
-}
-
-/* Light / Highlight section */
-main .section.light,
-main .section.highlight {
-  background-color: var(--light-color);
-  margin: 0;
-  padding: var(--spacing-xl) 0;
-}
-
 /* Navy section */
 main .section.navy {
   background-color: var(--brand-navy);
@@ -571,6 +557,52 @@ main .section.navy h6 {
 
 main .section.navy a:any-link:not(.button) {
   color: #fff;
+}
+
+/* Center default content in dark sections */
+main .section.dark > .default-content-wrapper {
+  text-align: center;
+}
+
+main .section.dark > .default-content-wrapper h2 {
+  margin-bottom: var(--spacing-s);
+}
+
+main .section.dark > .default-content-wrapper p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style inline links as pill buttons in dark sections */
+main .section.dark > .default-content-wrapper p a:any-link {
+  display: inline-block;
+  padding: var(--button-padding);
+  border: 2px solid #fff;
+  border-radius: var(--button-border-radius);
+  font-weight: var(--button-font-weight);
+  text-transform: var(--button-text-transform);
+  text-decoration: none;
+  margin: var(--spacing-xs);
+}
+
+main .section.dark > .default-content-wrapper p a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Remove margin between adjacent dark sections */
+main .section.dark + .section,
+main .section + .section.dark {
+  margin-top: 0;
+}
+
+/* Light / Highlight section */
+main .section.light,
+main .section.highlight {
+  background-color: var(--light-color);
+  margin: 0;
+  padding: var(--spacing-xl) 0;
 }
 
 /* Muted text in sections (for labels, categories) */

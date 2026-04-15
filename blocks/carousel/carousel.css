@@ -93,6 +93,14 @@
   border: 2px solid var(--brand-red);
 }
 
+/* Card carousel link style (placed here to satisfy specificity ordering) */
+.carousel.carousel-cards .carousel-card-content p a {
+  color: var(--brand-red);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+}
+
 /* Navigation */
 .carousel-nav {
   position: absolute;
@@ -179,5 +187,90 @@
 
   .carousel-slide-content h2 {
     font-size: var(--heading-font-size-xxl);
+  }
+}
+
+/* ========================================
+   CARD CAROUSEL MODE (horizontal scrolling cards)
+   ======================================== */
+
+.carousel.carousel-cards {
+  padding: var(--spacing-l) 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--spacing-m);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0 var(--spacing-m);
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-card-content {
+  order: 0;
+}
+
+.carousel-card-content p:first-child {
+  font-size: var(--body-font-size-s);
+  color: var(--brand-grey);
+  margin-bottom: var(--spacing-xs);
+}
+
+.carousel-card-content h3 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  margin: 0 0 var(--spacing-xs);
+  line-height: 1.2;
+}
+
+.carousel-card-image {
+  order: 1;
+  margin-top: var(--spacing-s);
+}
+
+.carousel-card-image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel.carousel-cards .carousel-nav {
+  position: static;
+  transform: none;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-s) var(--spacing-m) 0;
+}
+
+@media (width >= 600px) {
+  .carousel-card {
+    flex: 0 0 300px;
+  }
+}
+
+@media (width >= 900px) {
+  .carousel-track {
+    padding: 0 var(--spacing-l);
+  }
+
+  .carousel-card {
+    flex: 0 0 340px;
+  }
+
+  .carousel.carousel-cards .carousel-nav {
+    padding: var(--spacing-s) var(--spacing-l) 0;
   }
 }

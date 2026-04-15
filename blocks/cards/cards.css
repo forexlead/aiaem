@@ -14,10 +14,13 @@
 .cards > ul > li {
   background-color: var(--background-color);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards .cards-card-body {
   padding: var(--spacing-s);
+  order: 1;
 }
 
 .cards .cards-card-body p {
@@ -37,11 +40,12 @@
 
 .cards .cards-card-image {
   line-height: 0;
+  order: 0;
 }
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
