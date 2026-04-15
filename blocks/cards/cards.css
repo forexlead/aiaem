@@ -1,5 +1,6 @@
 /* Cards Block - Merkle Design System
- * Content card grid with image, category label, heading, and link
+ * Featured content cards with text overlay on image
+ * Matches merkle.com "Our latest and greatest" pattern
  */
 
 .cards > ul {
@@ -12,15 +13,42 @@
 }
 
 .cards > ul > li {
-  background-color: var(--background-color);
+  position: relative;
   overflow: hidden;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
 }
 
+/* Image fills the entire card as background */
+.cards .cards-card-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  line-height: 0;
+}
+
+.cards > ul > li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark gradient overlay for text readability */
+.cards .cards-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 85%) 0%, rgb(0 0 0 / 20%) 60%, transparent 100%);
+}
+
+/* Text overlay positioned at bottom */
 .cards .cards-card-body {
-  padding: var(--spacing-s);
-  order: 1;
+  position: relative;
+  z-index: 1;
+  padding: var(--spacing-m);
+  margin-top: auto;
+  color: #fff;
 }
 
 .cards .cards-card-body p {
@@ -32,51 +60,68 @@
 }
 
 .cards .cards-card-body h3 {
-  margin: 0;
+  margin: 0 0 var(--spacing-s);
   font-size: var(--heading-font-size-m);
   font-weight: 700;
   line-height: 1.2;
+  color: #fff;
 }
 
-.cards .cards-card-image {
-  line-height: 0;
-  order: 0;
+.cards .cards-card-body p:last-child {
+  margin: 0;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-.cards > ul > li a:any-link {
-  color: inherit;
+.cards .cards-card-body a:any-link {
+  color: #fff;
   text-decoration: none;
-  display: block;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: var(--body-font-size-s);
 }
 
-.cards > ul > li a:hover {
-  opacity: 0.85;
+.cards .cards-card-body a:hover {
+  opacity: 0.8;
 }
 
-/* Dark section cards */
+/* Dark section — no extra background needed, cards are self-contained */
 .dark .cards > ul > li {
   background-color: transparent;
 }
 
-.dark .cards .cards-card-body h3 {
-  color: #fff;
-}
-
+/* Mobile: stack all cards */
 @media (width >= 600px) {
   .cards > ul {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  /* First card spans left column, both rows */
+  .cards > ul > li:first-child {
+    grid-row: 1 / 3;
+    min-height: 400px;
+  }
+
+  .cards > ul > li:nth-child(2),
+  .cards > ul > li:nth-child(3) {
+    min-height: 200px;
   }
 }
 
 @media (width >= 900px) {
   .cards > ul {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-l);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: var(--spacing-xs);
+  }
+
+  /* All 3 cards equal at wide desktop */
+  .cards > ul > li,
+  .cards > ul > li:first-child {
+    grid-row: auto;
+    min-height: 350px;
+  }
+
+  .cards .cards-card-body h3 {
+    font-size: var(--heading-font-size-s);
   }
 }
