@@ -22,7 +22,7 @@
 
 .cards .cards-card-body p {
   margin: 0 0 var(--spacing-xs);
-  font-size: var(--body-font-size-s);
+  font-size: var(--body-font-size-m);
   color: var(--brand-grey);
   text-transform: uppercase;
   font-weight: 700;

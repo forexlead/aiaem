@@ -44,7 +44,7 @@
 
   /* heading sizes - mobile first */
   --heading-font-size-xxl: 36px;
-  --heading-font-size-xl: 28px;
+  --heading-font-size-xl: 32px;
   --heading-font-size-l: 24px;
   --heading-font-size-m: 20px;
   --heading-font-size-s: 18px;
@@ -135,7 +135,7 @@
   :root {
     /* heading sizes - desktop */
     --heading-font-size-xxl: 44px;
-    --heading-font-size-xl: 32px;
+    --heading-font-size-xl: 44px;
     --heading-font-size-l: 28px;
     --heading-font-size-m: 24px;
     --heading-font-size-s: 18px;
@@ -206,7 +206,8 @@ h1 {
 
 h2 {
   font-size: var(--heading-font-size-xl);
-  font-weight: 700;
+  font-weight: 400;
+  line-height: var(--heading-line-height);
 }
 
 h3 {
@@ -535,6 +536,12 @@ main .section.dark button.button.secondary {
 
 main .section.dark hr {
   border-top-color: rgb(255 255 255 / 30%);
+}
+
+/* Remove margin between adjacent dark sections */
+main .section.dark + .section,
+main .section + .section.dark {
+  margin-top: 0;
 }
 
 /* Light / Highlight section */

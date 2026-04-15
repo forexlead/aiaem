@@ -7,7 +7,8 @@
 }
 
 .columns img {
-  width: 100%;
+  max-width: 200px;
+  height: auto;
 }
 
 .columns > div > div {
@@ -22,6 +23,16 @@
   display: block;
 }
 
+.columns h6 {
+  margin-top: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+}
+
+.columns p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
 @media (width >= 900px) {
   .columns > div {
     align-items: center;
@@ -32,5 +43,34 @@
   .columns > div > div {
     flex: 1;
     order: unset;
+  }
+}
+
+/* When multiple columns blocks are adjacent (capability grid pattern),
+   display them side by side using the section's inner div as flex parent */
+.columns-container + .columns-container {
+  margin-top: 0;
+}
+
+/* When section has multiple columns-wrappers, lay them out as a grid */
+.section.columns-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section.columns-container > .columns-wrapper {
+  flex: 1 1 calc(50% - var(--spacing-m));
+  min-width: 200px;
+  padding: 0 var(--spacing-s);
+  box-sizing: border-box;
+}
+
+.section.columns-container > :not(.columns-wrapper) {
+  flex: 0 0 100%;
+}
+
+@media (width >= 900px) {
+  .section.columns-container > .columns-wrapper {
+    flex: 1 1 calc(25% - var(--spacing-m));
   }
 }
