@@ -1,0 +1,6 @@
+- [Legal Terms](/en/legal-terms)
+- [Privacy Policy](/en/privacy-policy)
+- [Disclosure Policy](/en/disclosure-policy)
+- [Cookie Notice](/en/cookie-notice)
+- [Email Preferences](/en/email-preferences)
+- [Sitemap](/en/sitemap)
