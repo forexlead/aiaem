@@ -1,0 +1,121 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.merkle.com/en/home.html"
+      ],
+      "description": "Merkle homepage - rich marketing page with hero carousel, featured content cards, icon feature grid, video, case study carousel, and CTAs",
+      "blocks": [
+        {
+          "name": "carousel",
+          "instances": [
+            ".teasercarousel.carousel .cmp-carousel"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".teasergallerylist.mer-featured-tgl"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".container.responsivegrid.text-left"
+          ]
+        },
+        {
+          "name": "embed",
+          "instances": [
+            ".video.centered"
+          ]
+        },
+        {
+          "name": "carousel",
+          "instances": [
+            ".listcards.teasergallerylist"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Carousel",
+          "selector": ".teasercarousel.carousel",
+          "style": "dark",
+          "blocks": [
+            "carousel"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Featured Content",
+          "selector": "#container-34049edaf9",
+          "style": "dark",
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".cmp-teaser-layout-large.content-center h2",
+            ".cmp-teaser-layout-large.content-center .cmp-teaser__description",
+            ".cmp-teaser-layout-large.content-center hr"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Capabilities and Work",
+          "selector": "#container-1db8cd56b8",
+          "style": "dark",
+          "blocks": [
+            "columns",
+            "embed",
+            "carousel"
+          ],
+          "defaultContent": [
+            ".cmp-teaser-layout-large.cmp-teaser-blue-black.top-spacer-s h2",
+            ".cmp-teaser-layout-large.cmp-teaser-blue-black.top-spacer-s .cmp-teaser__description",
+            ".cmp-teaser-layout-large.cmp-teaser-blue-black.top-spacer-m h2",
+            ".cmp-teaser-layout-large.cmp-teaser-blue-black.top-spacer-m .cmp-teaser__description",
+            ".cmp-teaser-layout-large.cmp-teaser-blue-black.top-spacer-m .cmp-teaser__action-container"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "content-hub",
+      "urls": [
+        "https://www.merkle.com/en/work.html",
+        "https://www.merkle.com/en/merkle-now.html"
+      ],
+      "description": "Content hub listing page with featured items grid, filterable archive section, and text hero",
+      "blocks": []
+    },
+    {
+      "name": "service-listing",
+      "urls": [
+        "https://www.merkle.com/en/capabilities.html"
+      ],
+      "description": "Service listing page with text hero and vertical list of capability links with descriptions",
+      "blocks": []
+    },
+    {
+      "name": "section-landing",
+      "urls": [
+        "https://www.merkle.com/en/ai-expertise.html",
+        "https://www.merkle.com/en/careers.html"
+      ],
+      "description": "Section landing page with hero, feature sections, and CTAs",
+      "blocks": []
+    },
+    {
+      "name": "about-page",
+      "urls": [
+        "https://www.merkle.com/en/about-us.html"
+      ],
+      "description": "Long-form informational page with hero video, icon feature grid, awards, partner logos, stats bar, and news list",
+      "blocks": []
+    }
+  ]
+}
