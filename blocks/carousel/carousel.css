@@ -230,7 +230,7 @@
   position: relative;
   min-height: 450px;
   overflow: hidden;
-  border-radius: var(--border-radius-md);
+  border-radius: 16px 16px 0 0;
 }
 
 .carousel-card-image {
@@ -250,12 +250,12 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgb(0 0 0 / 80%) 0%, rgb(0 0 0 / 20%) 50%, transparent 100%);
+  background: linear-gradient(to bottom, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 20%) 40%, transparent 100%);
 }
 
 .carousel-card-content {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1;
@@ -264,15 +264,18 @@
 }
 
 .carousel-card-content p:first-child {
-  font-size: var(--body-font-size-s);
-  color: var(--brand-grey);
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 70%);
   margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 
 .carousel-card-content h3 {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
-  margin: 0 0 var(--spacing-xs);
+  margin: 0 0 var(--spacing-s);
   line-height: 1.2;
   color: #fff;
 }

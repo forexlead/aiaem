@@ -1,5 +1,10 @@
 /* Embed Block - Merkle Design System */
 
+.embed-wrapper {
+  background: linear-gradient(180deg, #000 0%, #2d1b69 30%, #7b5ea7 60%, #c4a8e0 85%, #000 100%);
+  padding: var(--spacing-xl) 0;
+}
+
 .embed {
   max-width: 1200px;
   margin: 0 auto;

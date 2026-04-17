@@ -39,16 +39,21 @@
   line-height: var(--body-line-height);
 }
 
-/* Center icon+text columns in dark sections (capability grid) */
-.dark .columns > div {
-  text-align: center;
-  align-items: center;
-}
-
+/* Icon+text columns in dark sections (capability grid) */
 .dark .columns > div > div {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.dark .columns h6 {
+  font-size: var(--heading-font-size-m);
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-s);
+}
+
+.dark .columns p {
+  color: rgb(255 255 255 / 80%);
+  line-height: 1.5;
 }
 
 @media (width >= 900px) {
