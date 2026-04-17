@@ -11,10 +11,10 @@
   height: auto;
 }
 
-/* Invert black icons on dark section backgrounds */
+/* Crystal icons on dark section backgrounds */
 .dark .columns img {
-  filter: invert(1) brightness(1.2);
-  max-width: 120px;
+  max-width: 220px;
+  height: auto;
 }
 
 .columns > div > div {
