@@ -58,9 +58,9 @@
 }
 
 .carousel-slide-content h2 {
-  font-size: var(--heading-font-size-xxl);
+  font-size: 36px;
   font-weight: 400;
-  line-height: var(--heading-line-height);
+  line-height: 0.91;
   color: #fff;
   margin: 0 0 var(--spacing-s);
   max-width: 700px;
@@ -70,6 +70,16 @@
   color: rgb(255 255 255 / 85%);
   margin: 0 0 var(--spacing-s);
   max-width: 600px;
+}
+
+/* Pretitle (e.g., "DENNY'S CASE STUDY") */
+.carousel-slide-content p:first-child {
+  color: var(--brand-red);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
 }
 
 .carousel-slide-content a {
@@ -135,33 +145,30 @@
   background: rgb(0 0 0 / 70%);
 }
 
-/* Indicators */
+/* Indicators - horizontal lines at bottom-left */
 .carousel-indicators {
   display: flex;
-  justify-content: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-s);
+  gap: var(--spacing-s);
+  padding: var(--spacing-m) var(--spacing-m) var(--spacing-m);
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
   z-index: 2;
 }
 
 .carousel-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 2px solid rgb(255 255 255 / 50%);
-  background: transparent;
+  width: 40px;
+  height: 3px;
+  border-radius: 0;
+  border: none;
+  background: rgb(255 255 255 / 30%);
   cursor: pointer;
   padding: 0;
   transition: all var(--transition-speed) var(--transition-ease);
 }
 
 .carousel-indicator.active {
-  background: #fff;
-  border-color: #fff;
+  background: var(--brand-red);
 }
 
 @media (width >= 600px) {
@@ -186,7 +193,7 @@
   }
 
   .carousel-slide-content h2 {
-    font-size: var(--heading-font-size-xxl);
+    font-size: 56px;
   }
 }
 

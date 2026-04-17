@@ -591,6 +591,16 @@ main .section.dark > .default-content-wrapper p a:hover {
   color: #000;
 }
 
+/* Second link in same paragraph gets red border (secondary CTA) */
+main .section.dark > .default-content-wrapper p a:any-link + a:any-link {
+  border-color: var(--brand-red);
+}
+
+main .section.dark > .default-content-wrapper p a:any-link + a:hover {
+  background-color: var(--brand-red);
+  border-color: var(--brand-red);
+}
+
 /* Remove margin between adjacent dark sections */
 main .section.dark + .section,
 main .section + .section.dark {
