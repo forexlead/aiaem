@@ -76,9 +76,15 @@
 }
 
 /* When section has multiple columns-wrappers, lay them out as a grid */
-.section.columns-container {
+main .section.columns-container {
   display: flex;
   flex-wrap: wrap;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
 }
 
 .section.columns-container > .columns-wrapper {
