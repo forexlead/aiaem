@@ -80,6 +80,22 @@ function decorateHeroCarousel(block, rows) {
       slideContent.className = 'carousel-slide-content';
       slideContent.append(...cells[1].childNodes);
 
+      // Merge adjacent link-only paragraphs into a single CTA row
+      const paragraphs = [...slideContent.querySelectorAll(':scope > p')];
+      const linkParas = [];
+      for (let i = paragraphs.length - 1; i >= 0; i -= 1) {
+        const p = paragraphs[i];
+        if (p.children.length === 1 && p.querySelector('a')) linkParas.unshift(p);
+        else break;
+      }
+      if (linkParas.length > 1) {
+        const merged = linkParas[0];
+        for (let i = 1; i < linkParas.length; i += 1) {
+          merged.append(...linkParas[i].childNodes);
+          linkParas[i].remove();
+        }
+      }
+
       slide.append(slideImage, slideContent);
     } else {
       slide.append(...row.childNodes);

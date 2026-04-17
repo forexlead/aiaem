@@ -82,7 +82,7 @@
   margin-bottom: var(--spacing-xs);
 }
 
-.carousel-slide-content a {
+.carousel .carousel-slide-content a:any-link {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
@@ -94,21 +94,26 @@
   margin-bottom: var(--spacing-xs);
 }
 
-.carousel-slide-content p:last-child a:first-child {
-  background-color: #fff;
-  color: #000;
-}
-
-.carousel-slide-content p:last-child a:last-child {
-  border: 2px solid var(--brand-red);
-}
-
-/* Card carousel link style (placed here to satisfy specificity ordering) */
-.carousel.carousel-cards .carousel-card-content p a {
+/* Card carousel link style (high specificity to override dark section) */
+.carousel.carousel-cards .carousel-card-content p a:any-link {
   color: var(--brand-red);
   text-decoration: none;
   font-weight: 700;
   font-size: var(--body-font-size-s);
+  text-transform: uppercase;
+}
+
+/* Primary CTA: first link in the last paragraph */
+.carousel .carousel-slide-content p:last-child a:first-child {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Secondary CTA: additional links in the last paragraph */
+.carousel .carousel-slide-content p:last-child a:last-child:not(:first-child) {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--brand-red);
 }
 
 /* Navigation */
@@ -225,6 +230,7 @@
   position: relative;
   min-height: 450px;
   overflow: hidden;
+  border-radius: var(--border-radius-md);
 }
 
 .carousel-card-image {
@@ -248,7 +254,10 @@
 }
 
 .carousel-card-content {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
   padding: var(--spacing-m);
   color: #fff;
@@ -296,7 +305,7 @@
   }
 
   .carousel-card {
-    flex: 0 0 340px;
+    flex: 0 0 380px;
     min-height: 550px;
   }
 }

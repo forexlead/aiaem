@@ -11,6 +11,12 @@
   height: auto;
 }
 
+/* Invert black icons on dark section backgrounds */
+.dark .columns img {
+  filter: invert(1) brightness(1.2);
+  max-width: 120px;
+}
+
 .columns > div > div {
   order: 1;
 }
@@ -31,6 +37,18 @@
 .columns p {
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
+}
+
+/* Center icon+text columns in dark sections (capability grid) */
+.dark .columns > div {
+  text-align: center;
+  align-items: center;
+}
+
+.dark .columns > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (width >= 900px) {

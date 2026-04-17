@@ -1,8 +1,10 @@
 /* Embed Block - Merkle Design System */
 
 .embed {
-  max-width: 960px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-m);
+  box-sizing: border-box;
 }
 
 .embed-video {

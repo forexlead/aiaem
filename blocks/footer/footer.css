@@ -1,5 +1,10 @@
 /* Footer - Merkle Design System
  * Dark footer with logo, legal links, social icons, disclosure, and copyright
+ * Structure: 4 sections loaded as fragment sections
+ *   1. Merkle logo + legal links
+ *   2. Social media links
+ *   3. Texas data broker disclosure
+ *   4. Copyright
  */
 
 footer {
@@ -8,23 +13,10 @@ footer {
   font-size: var(--body-font-size-s);
 }
 
-footer .footer > div {
-  margin: auto;
+footer .footer {
   max-width: var(--content-max-width);
+  margin: auto;
   padding: var(--spacing-l) var(--spacing-m) var(--spacing-m);
-}
-
-footer .footer p {
-  margin: 0 0 var(--spacing-xs);
-  color: rgb(255 255 255 / 65%);
-}
-
-/* Muted text for disclosure and copyright */
-footer .footer > div:nth-child(3) p,
-footer .footer > div:last-child p {
-  font-size: var(--body-font-size-xs);
-  color: rgb(255 255 255 / 50%);
-  max-width: 800px;
 }
 
 footer .footer a:any-link {
@@ -37,6 +29,11 @@ footer .footer a:hover {
   opacity: 0.7;
 }
 
+footer .footer .section {
+  padding: 0;
+  margin: 0;
+}
+
 footer .footer ul {
   list-style: none;
   padding: 0;
@@ -46,38 +43,69 @@ footer .footer ul {
   gap: var(--spacing-s) var(--spacing-m);
 }
 
-footer .footer img {
-  max-width: 128px;
-  height: auto;
+footer .footer li {
+  margin: 0;
 }
 
-/* First section: logo + legal links */
-footer .footer > div:first-child {
+/* Section 1: Logo + legal links */
+footer .footer .section:nth-child(1) {
   padding-bottom: var(--spacing-m);
   border-bottom: 1px solid rgb(255 255 255 / 15%);
 }
 
-footer .footer > div:first-child > p:first-child {
+footer .footer .section:nth-child(1) p {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   color: #fff;
   margin-bottom: var(--spacing-m);
 }
 
-/* Social links section */
-footer .footer > div:nth-child(2) {
-  padding-top: var(--spacing-m);
-  padding-bottom: var(--spacing-m);
+/* Section 2: Social links */
+footer .footer .section:nth-child(2) {
+  padding: var(--spacing-m) 0;
 }
 
-/* Copyright section */
-footer .footer > div:last-child {
+footer .footer .section:nth-child(2) li {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50px;
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  transition: border-color var(--transition-speed) var(--transition-ease);
+}
+
+footer .footer .section:nth-child(2) li:hover {
+  border-color: #fff;
+}
+
+/* Section 3: Disclosure text */
+footer .footer .section:nth-child(3) {
+  padding: var(--spacing-s) 0;
+}
+
+footer .footer .section:nth-child(3) p {
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 50%);
+  max-width: 800px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Section 4: Copyright */
+footer .footer .section:nth-child(4) {
   padding-top: var(--spacing-s);
   border-top: 1px solid rgb(255 255 255 / 15%);
 }
 
+footer .footer .section:nth-child(4) p {
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 50%);
+  margin: 0;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
+  footer .footer {
     padding: var(--spacing-l) var(--spacing-l) var(--spacing-m);
   }
 }

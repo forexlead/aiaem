@@ -559,9 +559,21 @@ main .section.navy a:any-link:not(.button) {
   color: #fff;
 }
 
-/* Center default content in dark sections */
+/* Spacing between wrapper divs within a dark section */
+main .section.dark > div + div {
+  margin-top: var(--spacing-l);
+}
+
+/* No top margin for columns-wrapper when preceded by another columns-wrapper (icon grid) */
+main .section.dark > .columns-wrapper + .columns-wrapper {
+  margin-top: 0;
+}
+
+/* Larger gap before major section headings */
 main .section.dark > .default-content-wrapper {
   text-align: center;
+  padding-top: var(--spacing-xl);
+  padding-bottom: 0;
 }
 
 main .section.dark > .default-content-wrapper h2 {
@@ -572,6 +584,13 @@ main .section.dark > .default-content-wrapper p {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Reduce gap between intro text and its following block */
+main .section.dark > .default-content-wrapper + .cards-wrapper,
+main .section.dark > .default-content-wrapper + .columns-wrapper,
+main .section.dark > .default-content-wrapper + .carousel-wrapper {
+  margin-top: var(--spacing-m);
 }
 
 /* Style inline links as pill buttons in dark sections */

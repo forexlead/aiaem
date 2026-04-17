@@ -18,6 +18,7 @@
   min-height: 300px;
   display: flex;
   flex-direction: column;
+  border-radius: var(--border-radius-md);
 }
 
 /* Image fills the entire card as background */
@@ -71,15 +72,16 @@
   margin: 0;
 }
 
-.cards .cards-card-body a:any-link {
-  color: #fff;
+/* High specificity to override dark section link color */
+main .section .cards .cards-card-body a:any-link {
+  color: var(--brand-red);
   text-decoration: none;
   font-weight: 700;
   text-transform: uppercase;
   font-size: var(--body-font-size-s);
 }
 
-.cards .cards-card-body a:hover {
+main .section .cards .cards-card-body a:hover {
   opacity: 0.8;
 }
 
@@ -118,7 +120,7 @@
   .cards > ul > li,
   .cards > ul > li:first-child {
     grid-row: auto;
-    min-height: 350px;
+    min-height: 420px;
   }
 
   .cards .cards-card-body h3 {
