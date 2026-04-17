@@ -18,6 +18,8 @@ export default function decorate(block) {
     video.playsInline = true;
     video.muted = true;
     video.preload = 'metadata';
+    // Use sizzle reel poster from merkle assets
+    video.poster = 'https://assets.merkle.com/is/image/merkle/merkle-sizzle-reel-cover-2025:Takeover-Image-Mobile';
 
     const source = document.createElement('source');
     source.src = url;
