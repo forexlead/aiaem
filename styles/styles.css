@@ -593,6 +593,28 @@ main .section.dark > .default-content-wrapper + .carousel-wrapper {
   margin-top: var(--spacing-m);
 }
 
+/* Light sub-section: "Our latest and greatest" intro + cards */
+main .section.dark > .carousel-wrapper + .default-content-wrapper {
+  background-color: #fff;
+  color: #000;
+  padding: var(--spacing-xl) var(--spacing-m) var(--spacing-m);
+  margin-top: 0;
+}
+
+main .section.dark > .carousel-wrapper + .default-content-wrapper h2 {
+  color: #000;
+}
+
+main .section.dark > .carousel-wrapper + .default-content-wrapper p {
+  color: #333;
+}
+
+main .section.dark > .carousel-wrapper + .default-content-wrapper + .cards-wrapper {
+  background-color: #fff;
+  padding: 0 var(--spacing-m) var(--spacing-xl);
+  margin-top: 0;
+}
+
 /* Style inline links as pill buttons in dark sections */
 main .section.dark > .default-content-wrapper p a:any-link {
   display: inline-block;
