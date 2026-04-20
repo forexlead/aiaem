@@ -511,6 +511,7 @@ main .section.dark {
   color: #fff;
   margin: 0;
   padding: var(--spacing-xl) 0;
+  max-width: none;
 }
 
 main .section.dark h1,

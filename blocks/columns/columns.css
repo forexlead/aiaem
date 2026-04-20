@@ -87,6 +87,13 @@ main .section.columns-container {
   box-sizing: border-box;
 }
 
+/* Dark sections must stay full-width for edge-to-edge background */
+main .section.dark.columns-container {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .section.columns-container > .columns-wrapper {
   flex: 1 1 calc(50% - var(--spacing-m));
   min-width: 200px;
