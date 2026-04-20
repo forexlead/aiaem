@@ -38,9 +38,10 @@ footer .footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--spacing-s) var(--spacing-m);
+  max-width: 400px;
 }
 
 footer .footer li {
@@ -63,6 +64,12 @@ footer .footer .section:nth-child(1) p {
 /* Section 2: Social links */
 footer .footer .section:nth-child(2) {
   padding: var(--spacing-m) 0;
+}
+
+footer .footer .section:nth-child(2) ul {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
 }
 
 footer .footer .section:nth-child(2) li {
