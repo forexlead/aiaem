@@ -491,6 +491,10 @@ main > .section:first-of-type {
   margin-top: 0;
 }
 
+main > .section:empty {
+  display: none;
+}
+
 @media (width >= 900px) {
   main > .section > div {
     padding: var(--section-padding);
@@ -507,6 +511,12 @@ main .section.dark {
   color: #fff;
   margin: 0;
   padding: var(--spacing-xl) 0;
+}
+
+/* Remove top padding when dark section is first visible content (carousel hero) */
+main > .section.dark:first-of-type,
+main > .section:empty + .section.dark {
+  padding-top: 0;
 }
 
 main .section.dark h1,
