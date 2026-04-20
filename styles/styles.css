@@ -559,6 +559,18 @@ main .section.navy a:any-link:not(.button) {
   color: #fff;
 }
 
+/* Full-bleed carousel wrapper — break out of max-width container */
+main .section.dark > .carousel-wrapper {
+  flex: 0 0 100vw;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0;
+  max-width: none;
+  padding: 0;
+}
+
 /* Spacing between wrapper divs within a dark section */
 main .section.dark > div + div {
   margin-top: var(--spacing-l);
@@ -593,12 +605,20 @@ main .section.dark > .default-content-wrapper + .carousel-wrapper {
   margin-top: var(--spacing-m);
 }
 
-/* Light sub-section: "Our latest and greatest" intro + cards */
+/* Light sub-section: "Our latest and greatest" intro + cards
+   Uses same full-bleed breakout as carousel to span full viewport */
 main .section.dark > .carousel-wrapper + .default-content-wrapper {
   background-color: #fff;
   color: #000;
+  flex: 0 0 100vw;
+  width: 100vw;
+  max-width: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   padding: var(--spacing-xl) var(--spacing-m) var(--spacing-m);
   margin-top: 0;
+  box-sizing: border-box;
 }
 
 main .section.dark > .carousel-wrapper + .default-content-wrapper h2 {
@@ -611,8 +631,20 @@ main .section.dark > .carousel-wrapper + .default-content-wrapper p {
 
 main .section.dark > .carousel-wrapper + .default-content-wrapper + .cards-wrapper {
   background-color: #fff;
+  flex: 0 0 100vw;
+  width: 100vw;
+  max-width: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0 var(--spacing-m) var(--spacing-xl);
   margin-top: 0;
+  box-sizing: border-box;
+}
+
+main .section.dark > .carousel-wrapper + .default-content-wrapper + .cards-wrapper .cards {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
 }
 
 /* Style inline links as pill buttons in dark sections */
