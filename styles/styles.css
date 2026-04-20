@@ -513,12 +513,6 @@ main .section.dark {
   padding: var(--spacing-xl) 0;
 }
 
-/* Remove top padding when dark section is first visible content (carousel hero) */
-main > .section.dark:first-of-type,
-main > .section:empty + .section.dark {
-  padding-top: 0;
-}
-
 main .section.dark h1,
 main .section.dark h2,
 main .section.dark h3,
@@ -680,6 +674,12 @@ main .section.dark > .default-content-wrapper p a:hover {
 main .section.dark + .section,
 main .section + .section.dark {
   margin-top: 0;
+}
+
+/* Remove top padding when dark section is first visible content (carousel hero) */
+main > .section.dark:first-of-type,
+main > .section:empty + .section.dark {
+  padding-top: 0;
 }
 
 /* Light / Highlight section */
