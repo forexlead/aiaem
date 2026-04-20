@@ -1,4 +1,4 @@
-- [Merkle](/en/home)
+- [![Merkle](/icons/merkle-logo-white.svg)](/en/home)
 
 ---
 

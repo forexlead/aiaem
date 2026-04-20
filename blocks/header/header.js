@@ -131,10 +131,21 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
+  const brandLink = navBrand.querySelector('a');
   if (brandLink) {
     brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+    const buttonContainer = brandLink.closest('.button-container') || brandLink.closest('.button-wrapper');
+    if (buttonContainer) buttonContainer.className = '';
+    // Add logo image if brand link only has text
+    if (!brandLink.querySelector('img')) {
+      const logo = document.createElement('img');
+      logo.src = '/icons/merkle-logo-white.svg';
+      logo.alt = 'Merkle';
+      logo.width = 142;
+      logo.height = 18;
+      brandLink.textContent = '';
+      brandLink.append(logo);
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
