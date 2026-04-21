@@ -192,6 +192,8 @@ header nav .nav-sections ul > li {
 /* Make nav-drop strong labels look like regular nav links */
 header nav .nav-sections ul > li > p > strong {
   font-weight: 700;
+  font-size: var(--heading-font-size-s);
+  line-height: 1;
   cursor: pointer;
   color: #fff;
 }
