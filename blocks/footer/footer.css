@@ -1,10 +1,6 @@
 /* Footer - Merkle Design System
- * Dark footer with logo, legal links, social icons, disclosure, and copyright
- * Structure: 4 sections loaded as fragment sections
- *   1. Merkle logo + legal links
- *   2. Social media links
- *   3. Texas data broker disclosure
- *   4. Copyright
+ * Dark footer with logo, legal links in 2-col grid, social icons, disclosure
+ * Matches merkle.com footer layout
  */
 
 footer {
@@ -16,12 +12,13 @@ footer {
 footer .footer {
   max-width: var(--content-max-width);
   margin: auto;
-  padding: var(--spacing-l) var(--spacing-m) var(--spacing-m);
+  padding: var(--spacing-xl) var(--spacing-m) var(--spacing-l);
 }
 
 footer .footer a:any-link {
   color: #fff;
   font-weight: 400;
+  text-decoration: none;
   transition: opacity var(--transition-speed) var(--transition-ease);
 }
 
@@ -34,75 +31,91 @@ footer .footer .section {
   margin: 0;
 }
 
+/* Section 1: Logo + legal links in 2-column grid */
+footer .footer .section:nth-child(1) {
+  padding-bottom: var(--spacing-l);
+}
+
+footer .footer .section:nth-child(1) p {
+  margin-bottom: var(--spacing-l);
+}
+
+footer .footer .section:nth-child(1) p a {
+  display: inline-block;
+}
+
 footer .footer ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-s) var(--spacing-m);
-  max-width: 400px;
+  gap: var(--spacing-m) var(--spacing-xl);
+  max-width: 500px;
 }
 
 footer .footer li {
   margin: 0;
 }
 
-/* Section 1: Logo + legal links */
-footer .footer .section:nth-child(1) {
-  padding-bottom: var(--spacing-m);
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
+footer .footer .section:nth-child(1) li a {
+  font-size: 18px;
 }
 
-footer .footer .section:nth-child(1) p {
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: var(--spacing-m);
-}
-
-/* Section 2: Social links */
+/* Section 2: Social links with red border rounded squares */
 footer .footer .section:nth-child(2) {
-  padding: var(--spacing-m) 0;
+  padding: var(--spacing-l) 0;
 }
 
 footer .footer .section:nth-child(2) ul {
   display: flex;
-  flex-wrap: wrap;
+  gap: var(--spacing-s);
   max-width: none;
 }
 
 footer .footer .section:nth-child(2) li {
-  display: inline-block;
-  padding: 6px 12px;
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 50px;
-  font-size: var(--body-font-size-xs);
-  text-transform: uppercase;
-  transition: border-color var(--transition-speed) var(--transition-ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--brand-red);
+  border-radius: 8px;
+  transition: background-color var(--transition-speed) var(--transition-ease);
 }
 
 footer .footer .section:nth-child(2) li:hover {
-  border-color: #fff;
+  background-color: var(--brand-red);
+}
+
+footer .footer .section:nth-child(2) li a {
+  font-size: var(--body-font-size-s);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Section 3: Disclosure text */
 footer .footer .section:nth-child(3) {
-  padding: var(--spacing-s) 0;
+  padding: var(--spacing-m) 0;
 }
 
 footer .footer .section:nth-child(3) p {
   font-size: var(--body-font-size-xs);
   color: rgb(255 255 255 / 50%);
-  max-width: 800px;
+  max-width: 700px;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+footer .footer .section:nth-child(3) p a {
+  color: rgb(255 255 255 / 50%);
+  text-decoration: underline;
 }
 
 /* Section 4: Copyright */
 footer .footer .section:nth-child(4) {
-  padding-top: var(--spacing-s);
-  border-top: 1px solid rgb(255 255 255 / 15%);
+  padding-top: var(--spacing-m);
 }
 
 footer .footer .section:nth-child(4) p {
@@ -113,6 +126,6 @@ footer .footer .section:nth-child(4) p {
 
 @media (width >= 900px) {
   footer .footer {
-    padding: var(--spacing-l) var(--spacing-l) var(--spacing-m);
+    padding: var(--spacing-xxl) var(--spacing-l) var(--spacing-l);
   }
 }
