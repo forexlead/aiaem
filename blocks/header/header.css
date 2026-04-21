@@ -288,15 +288,17 @@ header nav .nav-tools {
 }
 
 header nav .nav-tools a.button:any-link {
-  background-color: #fff;
-  color: #000;
+  background-color: transparent;
+  color: #fff;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   text-transform: uppercase;
-  padding: 15px 16px;
+  padding: 13px 16px;
+  border: 2px solid var(--brand-red);
   border-radius: var(--border-radius-pill);
 }
 
 header nav .nav-tools a.button:hover {
-  opacity: 0.85;
+  background-color: var(--brand-red);
+  color: #fff;
 }
