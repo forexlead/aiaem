@@ -65,11 +65,7 @@ header nav a:any-link {
   font-weight: 700;
   font-size: var(--heading-font-size-s);
   text-transform: uppercase;
-  transition: opacity var(--transition-speed) var(--transition-ease);
-}
-
-header nav a:hover {
-  opacity: 0.7;
+  text-decoration: none;
 }
 
 /* hamburger */
@@ -212,30 +208,39 @@ header nav .nav-sections ul > li > ul > li {
     align-self: unset;
   }
 
+  /* Red underline hover effect on nav links */
+  header nav .nav-sections .default-content-wrapper > ul > li > a,
+  header nav .nav-sections .default-content-wrapper > ul > li > p > a,
+  header nav .nav-sections .default-content-wrapper > ul > li > p > strong {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > a::before,
+  header nav .nav-sections .default-content-wrapper > ul > li > p > a::before,
+  header nav .nav-sections .default-content-wrapper > ul > li > p > strong::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brand-red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease-out;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li:hover > a::before,
+  header nav .nav-sections .default-content-wrapper > ul > li:hover > p > a::before,
+  header nav .nav-sections .default-content-wrapper > ul > li:hover > p > strong::before {
+    transform: scaleX(1);
+  }
+
   header nav .nav-sections .nav-drop {
     position: relative;
-    padding-right: 16px;
     cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
   }
 
   header nav .nav-sections ul {
@@ -249,6 +254,7 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
   }
 
+  /* Flyout dropdown - opens left-aligned like original */
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
     position: relative;
@@ -257,28 +263,24 @@ header nav .nav-sections ul > li > ul > li {
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     display: block;
     position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: var(--spacing-s);
-    background-color: #111;
+    left: 0;
+    width: 280px;
+    top: 100%;
+    margin-top: 12px;
+    padding: var(--spacing-m);
+    background-color: #000;
     white-space: initial;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid #111;
+    border-top: 2px solid var(--brand-red);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
+    font-size: var(--body-font-size-m);
+    font-weight: 400;
+    text-transform: none;
   }
 }
 
