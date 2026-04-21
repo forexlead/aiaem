@@ -94,13 +94,13 @@
   margin-bottom: var(--spacing-xs);
 }
 
-/* Card carousel link style (high specificity to override dark section) */
+/* Card carousel link style — white "Read case" matching original */
 .carousel.carousel-cards .carousel-card-content p a:any-link {
-  color: var(--brand-red);
+  color: #fff;
   text-decoration: none;
-  font-weight: 700;
-  font-size: var(--body-font-size-s);
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: var(--body-font-size-m);
+  text-transform: none;
 }
 
 /* Primary CTA: first link in the last paragraph */
@@ -208,6 +208,50 @@
 
 .carousel.carousel-cards {
   padding: var(--spacing-l) 0;
+  position: relative;
+}
+
+/* "Our work in action" heading */
+.carousel-cards-heading {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 700;
+  color: #fff;
+  padding: 0 var(--spacing-m);
+  margin: 0 0 var(--spacing-l);
+  max-width: 250px;
+  line-height: 1;
+}
+
+@media (width >= 900px) {
+  .carousel.carousel-cards {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    gap: 0 var(--spacing-m);
+  }
+
+  .carousel-cards-heading {
+    grid-column: 1;
+    grid-row: 1;
+    padding: var(--spacing-l) 0 0 var(--spacing-l);
+    align-self: center;
+  }
+
+  .carousel.carousel-cards .carousel-track {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .carousel.carousel-cards .carousel-nav {
+    grid-column: 1;
+    grid-row: 2;
+    position: static;
+    transform: none;
+    justify-content: flex-start;
+    padding: var(--spacing-m) 0 0 var(--spacing-l);
+    pointer-events: auto;
+  }
 }
 
 .carousel-track {
@@ -264,8 +308,8 @@
 }
 
 .carousel-card-content p:first-child {
-  font-size: var(--body-font-size-xs);
-  color: rgb(255 255 255 / 70%);
+  font-size: 15px;
+  color: var(--brand-grey);
   margin-bottom: var(--spacing-xs);
   text-transform: uppercase;
   font-weight: 700;
@@ -273,7 +317,7 @@
 }
 
 .carousel-card-content h3 {
-  font-size: var(--heading-font-size-s);
+  font-size: 21px;
   font-weight: 700;
   margin: 0 0 var(--spacing-s);
   line-height: 1.2;
