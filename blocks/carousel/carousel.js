@@ -54,8 +54,13 @@ function decorateCardCarousel(block, rows) {
 
   nav.append(prevBtn, nextBtn);
 
+  // Add "Our work in action" heading (fixed left column, not part of scrolling track)
+  const heading = document.createElement('h2');
+  heading.className = 'carousel-cards-heading';
+  heading.textContent = 'Our work in action';
+
   block.textContent = '';
-  block.append(track, nav);
+  block.append(heading, track, nav);
 }
 
 function decorateHeroCarousel(block, rows) {
