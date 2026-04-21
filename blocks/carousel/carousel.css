@@ -207,8 +207,9 @@
    ======================================== */
 
 .carousel.carousel-cards {
-  padding: var(--spacing-l) 0;
+  padding: var(--spacing-l) 0 var(--spacing-xl);
   position: relative;
+  overflow: visible;
 }
 
 /* "Our work in action" heading */
