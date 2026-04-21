@@ -116,14 +116,14 @@
   border: 2px solid var(--brand-red);
 }
 
-/* Navigation */
+/* Navigation — hidden on hero carousel (no arrows on merkle.com hero) */
 .carousel-nav {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  display: flex;
+  display: none;
   justify-content: space-between;
   padding: 0 var(--spacing-s);
   z-index: 2;
@@ -326,6 +326,7 @@
 }
 
 .carousel.carousel-cards .carousel-nav {
+  display: flex;
   position: absolute;
   top: 50%;
   left: 0;
