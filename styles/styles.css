@@ -565,15 +565,8 @@ main .section.navy a:any-link:not(.button) {
   color: #fff;
 }
 
-/* Full-bleed carousel wrapper — break out of max-width container */
+/* Carousel wrapper — constrained to content max-width like nav */
 main .section.dark > .carousel-wrapper {
-  flex: 0 0 100vw;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-left: 0;
-  max-width: none;
   padding: 0;
 }
 
