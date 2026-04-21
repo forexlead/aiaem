@@ -151,7 +151,18 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
+      const subList = navSection.querySelector('ul');
+      if (subList) {
+        navSection.classList.add('nav-drop');
+        // Add flyout heading from the parent label text
+        const label = navSection.querySelector('strong') || navSection.querySelector('a');
+        if (label && !subList.querySelector('.nav-flyout-heading')) {
+          const heading = document.createElement('li');
+          heading.className = 'nav-flyout-heading';
+          heading.textContent = label.textContent;
+          subList.prepend(heading);
+        }
+      }
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {
           const expanded = navSection.getAttribute('aria-expanded') === 'true';

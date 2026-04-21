@@ -189,6 +189,13 @@ header nav .nav-sections ul > li {
   text-transform: uppercase;
 }
 
+/* Make nav-drop strong labels look like regular nav links */
+header nav .nav-sections ul > li > p > strong {
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+}
+
 header nav .nav-sections ul > li > ul {
   margin-top: 0;
 }
@@ -254,32 +261,44 @@ header nav .nav-sections ul > li > ul > li {
     position: relative;
   }
 
-  /* Flyout dropdown - opens left-aligned like original */
+  /* Flyout panel - full-height left-side overlay like original */
   header nav .nav-sections .default-content-wrapper > ul > li > ul {
     display: none;
-    position: relative;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
     display: block;
-    position: absolute;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 280px;
-    top: 100%;
-    margin-top: 12px;
-    padding: var(--spacing-m);
+    width: 320px;
+    height: 100vh;
+    padding: var(--spacing-xl) var(--spacing-l);
     background-color: #000;
     white-space: initial;
-    border-top: 2px solid var(--brand-red);
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  /* Flyout heading */
+  header nav .nav-sections .default-content-wrapper > ul > li > ul > li.nav-flyout-heading {
+    font-size: var(--heading-font-size-l);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 0 var(--spacing-m);
+    margin-bottom: var(--spacing-s);
+    border-bottom: none;
+    list-style: none;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
+    padding: 10px 0;
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
-    font-size: var(--body-font-size-m);
-    font-weight: 400;
+    font-size: var(--heading-font-size-s);
+    font-weight: 700;
     text-transform: none;
   }
 }
