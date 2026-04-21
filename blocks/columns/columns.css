@@ -87,11 +87,13 @@ main .section.columns-container {
   box-sizing: border-box;
 }
 
-/* Dark sections must stay full-width for edge-to-edge background */
+/* Dark sections: full-width background, centered content */
 main .section.dark.columns-container {
   max-width: none;
   margin-left: 0;
   margin-right: 0;
+  padding-left: max(32px, calc((100% - var(--content-max-width)) / 2 + 32px));
+  padding-right: max(32px, calc((100% - var(--content-max-width)) / 2 + 32px));
 }
 
 .section.columns-container > .columns-wrapper {
