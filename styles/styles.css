@@ -12,11 +12,11 @@
 
 :root {
   /* colors - core */
-  --background-color: #fff;
-  --text-color: #000;
+  --background-color: #ffffff;
+  --text-color: #000000;
   --text-color-secondary: #202020;
   --light-color: #f4f4f4;
-  --dark-color: #000;
+  --dark-color: #000000;
 
   /* colors - brand */
   --brand-navy: #040e4b;
@@ -25,13 +25,13 @@
 
   /* colors - semantic */
   --link-color: #202020;
-  --link-hover-color: #000;
-  --heading-color: #000;
-  --heading-color-inverted: #fff;
-  --text-color-muted: #666;
-  --text-color-light: #999;
+  --link-hover-color: #000000;
+  --heading-color: #000000;
+  --heading-color-inverted: #ffffff;
+  --text-color-muted: #666666;
+  --text-color-light: #999999;
   --border-color: #aeaebc;
-  --border-color-light: #ddd;
+  --border-color-light: #dddddd;
 
   /* fonts */
   --body-font-family: proxima-nova, proxima-nova-fallback, sans-serif;
@@ -678,6 +678,18 @@ main .section.dark > .default-content-wrapper p a:any-link {
 
 main .section.dark > .default-content-wrapper p a:hover {
   opacity: 0.85;
+}
+
+/* Secondary CTA: second link in a pair gets red border outline */
+main .section.dark > .default-content-wrapper p a:any-link + a:any-link {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--brand-red);
+}
+
+main .section.dark > .default-content-wrapper p a:any-link + a:hover {
+  background-color: var(--brand-red);
+  opacity: 1;
 }
 
 /* Remove margin between adjacent dark sections */
