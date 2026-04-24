@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 /**
- * Syncs design tokens from tokens/core.json → styles/styles.css
+ * Syncs design tokens from tokens.json → styles/styles.css
  *
  * Usage: node scripts/sync-tokens.mjs
  *
- * Reads token values from the Tokens Studio JSON files and updates
+ * Reads token values from the Tokens Studio single-file JSON and updates
  * the CSS custom properties in styles.css to match.
  */
 
@@ -15,7 +15,8 @@ import { fileURLToPath } from 'url';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-const core = JSON.parse(readFileSync(resolve(ROOT, 'tokens/core.json'), 'utf8'));
+const tokens = JSON.parse(readFileSync(resolve(ROOT, 'tokens.json'), 'utf8'));
+const core = tokens.global;
 
 const TOKEN_TO_CSS = {
   'color.white': '--background-color',
