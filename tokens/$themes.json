@@ -5,7 +5,14 @@
     "selectedTokenSets": {
       "core": "enabled",
       "semantic": "enabled",
-      "component": "enabled"
+      "component": "enabled",
+      "block-hero": "enabled",
+      "block-cards": "enabled",
+      "block-carousel": "enabled",
+      "block-columns": "enabled",
+      "block-header": "enabled",
+      "block-footer": "enabled",
+      "block-embed": "enabled"
     },
     "$figmaStyleReferences": {}
   }

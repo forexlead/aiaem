@@ -1,0 +1,39 @@
+{
+  "block": {
+    "hero": {
+      "minHeight": {
+        "mobile": { "$type": "dimension", "$value": "400", "$description": "Min height on mobile" },
+        "tablet": { "$type": "dimension", "$value": "480", "$description": "Min height on tablet (≥600px)" },
+        "desktop": { "$type": "dimension", "$value": "560", "$description": "Min height on desktop (≥900px)" }
+      },
+      "padding": {
+        "mobile": { "$type": "spacing", "$value": "{spacing.xl} {spacing.m}", "$description": "64px 24px" },
+        "desktop": { "$type": "spacing", "$value": "{spacing.xxl} {spacing.l}", "$description": "80px 40px" }
+      },
+      "bg": { "$type": "color", "$value": "{color.black}" },
+      "fg": { "$type": "color", "$value": "{color.white}" },
+      "heading": {
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.heading-xxl-desktop}", "$description": "44px on desktop" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{fontWeight.regular}" },
+        "color": { "$type": "color", "$value": "{color.white}" }
+      },
+      "body": {
+        "color": { "$type": "color", "$value": "{color.white}" }
+      },
+      "cta-primary": {
+        "bg": { "$type": "color", "$value": "{color.white}" },
+        "fg": { "$type": "color", "$value": "{color.black}" }
+      },
+      "cta-secondary": {
+        "bg": { "$type": "color", "$value": "rgba(0, 0, 0, 0)" },
+        "fg": { "$type": "color", "$value": "{color.white}" },
+        "borderColor": { "$type": "color", "$value": "{color.red}" },
+        "borderWidth": { "$type": "dimension", "$value": "{borderWidth.medium}" }
+      },
+      "image": {
+        "objectFit": { "$type": "other", "$value": "cover" },
+        "overlay": { "$type": "other", "$value": "none", "$description": "No overlay on hero — image covers full block" }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "block": {
+    "cards": {
+      "grid": {
+        "gap": { "$type": "dimension", "$value": "20" },
+        "columns-mobile": { "$type": "other", "$value": "1fr" },
+        "columns-tablet": { "$type": "other", "$value": "1fr 1fr" },
+        "columns-desktop": { "$type": "other", "$value": "2fr 1fr 1fr" }
+      },
+      "card": {
+        "minHeight": {
+          "mobile": { "$type": "dimension", "$value": "300" },
+          "tablet": { "$type": "dimension", "$value": "380" },
+          "desktop": { "$type": "dimension", "$value": "440" }
+        },
+        "borderRadius": { "$type": "dimension", "$value": "{borderRadius.pill}", "$description": "16px" },
+        "padding": { "$type": "dimension", "$value": "{spacing.m}" }
+      },
+      "featured-card": {
+        "bg": { "$type": "color", "$value": "{color.black}", "$description": "First card text panel" },
+        "fg": { "$type": "color", "$value": "{color.white}" },
+        "layout": { "$type": "other", "$value": "row", "$description": "Side-by-side: text left, image right" },
+        "split": { "$type": "other", "$value": "50% / 50%" }
+      },
+      "label": {
+        "color": { "$type": "color", "$value": "{color.grey}" },
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.body-s}" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{fontWeight.bold}" },
+        "textTransform": { "$type": "other", "$value": "uppercase" },
+        "letterSpacing": { "$type": "other", "$value": "0.05em" }
+      },
+      "title": {
+        "color": { "$type": "color", "$value": "{color.white}" },
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.heading-m-mobile}" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{fontWeight.bold}" },
+        "lineHeight": { "$type": "number", "$value": "120%" }
+      },
+      "image-overlay": {
+        "gradient": { "$type": "other", "$value": "linear-gradient(to bottom, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.10) 50%, transparent 100%)" }
+      },
+      "link": {
+        "color": { "$type": "color", "$value": "{color.white}" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{fontWeight.regular}" }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "block": {
+    "footer": {
+      "bg": { "$type": "color", "$value": "{color.black}" },
+      "fg": { "$type": "color", "$value": "{color.white}" },
+      "borderTop": { "$type": "color", "$value": "rgba(255, 255, 255, 0.10)" },
+      "padding": {
+        "mobile": { "$type": "spacing", "$value": "{spacing.xl} {spacing.m} {spacing.l}" },
+        "desktop": { "$type": "spacing", "$value": "{spacing.xxl} {spacing.l} {spacing.l}" }
+      },
+      "links": {
+        "fontSize": { "$type": "dimension", "$value": "18" },
+        "grid-columns": { "$type": "other", "$value": "1fr 1fr" },
+        "grid-gap": { "$type": "spacing", "$value": "{spacing.m} {spacing.xl}" },
+        "maxWidth": { "$type": "dimension", "$value": "500" }
+      },
+      "social": {
+        "iconSize": { "$type": "dimension", "$value": "40" },
+        "borderColor": { "$type": "color", "$value": "{color.red}" },
+        "borderRadius": { "$type": "dimension", "$value": "{borderRadius.md}", "$description": "8px" },
+        "borderWidth": { "$type": "dimension", "$value": "{borderWidth.medium}" },
+        "hover-bg": { "$type": "color", "$value": "{color.red}" }
+      },
+      "disclosure": {
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.body-xs}" },
+        "color": { "$type": "color", "$value": "rgba(255, 255, 255, 0.50)" },
+        "maxWidth": { "$type": "dimension", "$value": "700" },
+        "lineHeight": { "$type": "number", "$value": "160%" }
+      },
+      "copyright": {
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.body-xs}" },
+        "color": { "$type": "color", "$value": "rgba(255, 255, 255, 0.50)" }
+      }
+    }
+  }
+}

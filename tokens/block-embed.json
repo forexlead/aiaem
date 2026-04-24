@@ -1,0 +1,10 @@
+{
+  "block": {
+    "embed": {
+      "wrapper-bg": { "$type": "other", "$value": "linear-gradient(180deg, #000 0%, #2d1b69 30%, #7b5ea7 60%, #c4a8e0 85%, #000 100%)" },
+      "wrapper-padding": { "$type": "dimension", "$value": "{spacing.xl}" },
+      "maxWidth": { "$type": "dimension", "$value": "1200" },
+      "video-borderRadius": { "$type": "dimension", "$value": "{borderRadius.md}" }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "block": {
+    "header": {
+      "bg": { "$type": "color", "$value": "{color.black}" },
+      "fg": { "$type": "color", "$value": "{color.white}" },
+      "height": {
+        "mobile": { "$type": "dimension", "$value": "{sizing.nav-height-mobile}", "$description": "64px" },
+        "desktop": { "$type": "dimension", "$value": "{sizing.nav-height-desktop}", "$description": "80px" }
+      },
+      "position-mobile": { "$type": "other", "$value": "fixed" },
+      "position-desktop": { "$type": "other", "$value": "relative" },
+      "logo": {
+        "width": { "$type": "dimension", "$value": "142" },
+        "height": { "$type": "dimension", "$value": "18" }
+      },
+      "link": {
+        "fontSize": { "$type": "dimension", "$value": "{fontSize.heading-s}", "$description": "18px" },
+        "fontWeight": { "$type": "fontWeight", "$value": "{fontWeight.bold}" },
+        "textTransform": { "$type": "other", "$value": "uppercase" },
+        "color": { "$type": "color", "$value": "{color.white}" }
+      },
+      "hover-underline": {
+        "color": { "$type": "color", "$value": "{color.red}" },
+        "height": { "$type": "dimension", "$value": "2" },
+        "transition": { "$type": "other", "$value": "0.25s ease-out" }
+      },
+      "flyout": {
+        "width": { "$type": "dimension", "$value": "320" },
+        "bg": { "$type": "color", "$value": "{color.black}" },
+        "heading-fontSize": { "$type": "dimension", "$value": "{fontSize.heading-l-mobile}", "$description": "24px" },
+        "item-fontSize": { "$type": "dimension", "$value": "{fontSize.heading-s}", "$description": "18px" }
+      },
+      "cta": {
+        "bg": { "$type": "color", "$value": "rgba(0, 0, 0, 0)" },
+        "fg": { "$type": "color", "$value": "{color.white}" },
+        "borderColor": { "$type": "color", "$value": "{color.red}" },
+        "borderWidth": { "$type": "dimension", "$value": "{borderWidth.medium}" },
+        "borderRadius": { "$type": "dimension", "$value": "{borderRadius.pill}" },
+        "hover-bg": { "$type": "color", "$value": "{color.red}" }
+      },
+      "hamburger": {
+        "lineWidth": { "$type": "dimension", "$value": "20" },
+        "lineHeight": { "$type": "dimension", "$value": "2" },
+        "lineGap": { "$type": "dimension", "$value": "6" },
+        "color": { "$type": "color", "$value": "{color.white}" }
+      }
+    }
+  }
+}

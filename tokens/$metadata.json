@@ -2,6 +2,13 @@
   "tokenSetOrder": [
     "core",
     "semantic",
-    "component"
+    "component",
+    "block-hero",
+    "block-cards",
+    "block-carousel",
+    "block-columns",
+    "block-header",
+    "block-footer",
+    "block-embed"
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "block": {
+    "columns": {
+      "gap": {
+        "mobile": { "$type": "dimension", "$value": "{spacing.m}", "$description": "24px" },
+        "desktop": { "$type": "dimension", "$value": "{spacing.l}", "$description": "40px" }
+      },
+      "image-maxWidth": { "$type": "dimension", "$value": "200" },
+      "dark-image-maxWidth": { "$type": "dimension", "$value": "220", "$description": "Crystal icons on dark backgrounds" },
+      "dark-heading-fontSize": { "$type": "dimension", "$value": "{fontSize.heading-m-mobile}" },
+      "dark-body-color": { "$type": "color", "$value": "rgba(255, 255, 255, 0.80)" },
+      "dark-body-lineHeight": { "$type": "number", "$value": "150%" },
+      "grid-wrapper": {
+        "minWidth": { "$type": "dimension", "$value": "200" },
+        "columns-tablet": { "$type": "other", "$value": "50%", "$description": "2 columns" },
+        "columns-desktop": { "$type": "other", "$value": "25%", "$description": "4 columns" }
+      }
+    }
+  }
+}
