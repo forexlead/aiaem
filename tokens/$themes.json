@@ -1,0 +1,12 @@
+[
+  {
+    "id": "merkle-default",
+    "name": "Merkle Default",
+    "selectedTokenSets": {
+      "core": "enabled",
+      "semantic": "enabled",
+      "component": "enabled"
+    },
+    "$figmaStyleReferences": {}
+  }
+]

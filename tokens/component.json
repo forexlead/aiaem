@@ -1,0 +1,148 @@
+{
+  "button": {
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{fontSize.body-m}"
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.bold}"
+    },
+    "borderRadius": {
+      "$type": "dimension",
+      "$value": "{borderRadius.pill}"
+    },
+    "paddingVertical": {
+      "$type": "dimension",
+      "$value": "{spacing.s}"
+    },
+    "paddingHorizontal": {
+      "$type": "dimension",
+      "$value": "{spacing.m}"
+    },
+    "letterSpacing": {
+      "$type": "dimension",
+      "$value": "0"
+    },
+    "textCase": {
+      "$type": "other",
+      "$value": "uppercase"
+    },
+    "primary": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{color.black}"
+      }
+    },
+    "secondary": {
+      "bg": {
+        "$type": "color",
+        "$value": "rgba(0, 0, 0, 0)"
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.red}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{borderWidth.medium}"
+      },
+      "hover-bg": {
+        "$type": "color",
+        "$value": "{color.red}",
+        "$description": "Secondary hover fills red"
+      }
+    },
+    "accent": {
+      "bg": {
+        "$type": "color",
+        "$value": "{color.navy}"
+      },
+      "fg": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "borderColor": {
+        "$type": "color",
+        "$value": "{color.navy}"
+      },
+      "borderWidth": {
+        "$type": "dimension",
+        "$value": "{borderWidth.thin}"
+      },
+      "hover-bg": {
+        "$type": "color",
+        "$value": "{color.navy-light}"
+      }
+    },
+    "disabled-opacity": {
+      "$type": "other",
+      "$value": "0.5"
+    }
+  },
+  "input": {
+    "paddingVertical": {
+      "$type": "dimension",
+      "$value": "12"
+    },
+    "paddingHorizontal": {
+      "$type": "dimension",
+      "$value": "{spacing.s}"
+    },
+    "borderColor": {
+      "$type": "color",
+      "$value": "{border.light}"
+    },
+    "borderRadius": {
+      "$type": "dimension",
+      "$value": "{borderRadius.sm}"
+    },
+    "borderWidth": {
+      "$type": "dimension",
+      "$value": "{borderWidth.thin}"
+    },
+    "focusBorderColor": {
+      "$type": "color",
+      "$value": "{color.navy}"
+    },
+    "focusShadow": {
+      "$type": "boxShadow",
+      "$value": {
+        "x": "0",
+        "y": "0",
+        "blur": "0",
+        "spread": "3",
+        "color": "rgba(4, 14, 75, 0.15)",
+        "type": "dropShadow"
+      }
+    }
+  },
+  "icon": {
+    "size": {
+      "$type": "dimension",
+      "$value": "24"
+    }
+  },
+  "nav": {
+    "height-mobile": {
+      "$type": "dimension",
+      "$value": "{sizing.nav-height-mobile}"
+    },
+    "height-desktop": {
+      "$type": "dimension",
+      "$value": "{sizing.nav-height-desktop}"
+    },
+    "bg": {
+      "$type": "color",
+      "$value": "{color.black}"
+    }
+  }
+}

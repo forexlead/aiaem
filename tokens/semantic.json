@@ -1,0 +1,93 @@
+{
+  "fg": {
+    "default": {
+      "$type": "color",
+      "$value": "{color.black}",
+      "$description": "Primary text"
+    },
+    "secondary": {
+      "$type": "color",
+      "$value": "{color.grey-darker}",
+      "$description": "Secondary text"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{color.grey-dark}",
+      "$description": "Muted text"
+    },
+    "placeholder": {
+      "$type": "color",
+      "$value": "{color.grey-muted}",
+      "$description": "Placeholder / light text"
+    },
+    "inverted": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Text on dark backgrounds"
+    },
+    "link": {
+      "$type": "color",
+      "$value": "{color.grey-darker}",
+      "$description": "Link default"
+    },
+    "link-hover": {
+      "$type": "color",
+      "$value": "{color.black}",
+      "$description": "Link hover"
+    }
+  },
+  "bg": {
+    "default": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Page background"
+    },
+    "surface": {
+      "$type": "color",
+      "$value": "{color.grey-surface}",
+      "$description": "Light / highlight sections"
+    },
+    "dark": {
+      "$type": "color",
+      "$value": "{color.black}",
+      "$description": "Dark sections"
+    },
+    "navy": {
+      "$type": "color",
+      "$value": "{color.navy}",
+      "$description": "Navy sections"
+    },
+    "selection": {
+      "$type": "color",
+      "$value": "{color.navy}",
+      "$description": "Text selection"
+    }
+  },
+  "border": {
+    "default": {
+      "$type": "color",
+      "$value": "{color.grey}",
+      "$description": "Default border"
+    },
+    "light": {
+      "$type": "color",
+      "$value": "{color.grey-light}",
+      "$description": "Light border / form inputs"
+    },
+    "hr": {
+      "$type": "color",
+      "$value": "{color.grey}",
+      "$description": "Horizontal rule"
+    },
+    "blockquote": {
+      "$type": "color",
+      "$value": "{color.grey}",
+      "$description": "Blockquote left border"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{color.navy}",
+      "$description": "Input focus ring"
+    }
+  }
+}
