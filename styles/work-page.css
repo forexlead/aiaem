@@ -156,11 +156,10 @@
   margin: 0 auto;
 }
 
-/* "Filters" button — dark pill */
+/* "Filters" wrapper — constrain to content width, left-align the pill */
 .section.carousel-container > .default-content-wrapper:nth-child(3) > p:nth-child(3) {
   max-width: var(--content-max-width);
-  margin: var(--spacing-l) auto var(--spacing-l);
-  display: inline-block;
+  margin: var(--spacing-xl) auto var(--spacing-l);
   padding: 10px 20px;
   background-color: #000;
   color: #fff;
@@ -170,6 +169,8 @@
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 0.05em;
+  width: fit-content;
+  margin-left: max(var(--spacing-m), calc((100% - var(--content-max-width)) / 2));
 }
 
 /* "Load more" button — dark pill, centered */
