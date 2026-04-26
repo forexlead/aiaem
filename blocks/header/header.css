@@ -297,6 +297,25 @@ header nav .nav-sections ul > li > ul > li {
     overflow-y: auto;
   }
 
+  /* Blur backdrop when flyout is open */
+  body.nav-flyout-open main,
+  body.nav-flyout-open footer {
+    filter: blur(10px);
+    transition: filter 0.3s ease;
+  }
+
+  .nav-flyout-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 50%);
+    z-index: 50;
+  }
+
+  body.nav-flyout-open .nav-flyout-backdrop {
+    display: block;
+  }
+
   /* Flyout heading */
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li.nav-flyout-heading {
     font-size: var(--heading-font-size-l);
@@ -314,6 +333,41 @@ header nav .nav-sections ul > li > ul > li {
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li a {
+    font-size: var(--heading-font-size-s);
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  /* Flyout panel for nav items (fallback when outside .nav-sections) */
+  header nav li.nav-drop[aria-expanded='true'] > ul {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 420px;
+    height: 100vh;
+    padding: var(--spacing-xl) var(--spacing-l);
+    background-color: #000;
+    white-space: initial;
+    z-index: 100;
+    overflow-y: auto;
+  }
+
+  header nav li.nav-drop > ul > li.nav-flyout-heading {
+    font-size: var(--heading-font-size-l);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 0 0 var(--spacing-m);
+    margin-bottom: var(--spacing-s);
+    list-style: none;
+  }
+
+  header nav li.nav-drop > ul > li {
+    padding: 10px 0;
+  }
+
+  header nav li.nav-drop > ul > li a {
     font-size: var(--heading-font-size-s);
     font-weight: 700;
     text-transform: none;

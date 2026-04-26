@@ -63,6 +63,9 @@ function toggleAllNavSections(sections, expanded = false) {
   sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
+  if (!expanded || expanded === 'false') {
+    document.body.classList.remove('nav-flyout-open');
+  }
 }
 
 /**
@@ -149,29 +152,42 @@ export default async function decorate(block) {
   }
 
   const navSections = nav.querySelector('.nav-sections');
-  if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      const subList = navSection.querySelector('ul');
-      if (subList) {
-        navSection.classList.add('nav-drop');
-        // Add flyout heading from the parent label text
-        const label = navSection.querySelector('strong') || navSection.querySelector('a');
-        if (label && !subList.querySelector('.nav-flyout-heading')) {
-          const heading = document.createElement('li');
-          heading.className = 'nav-flyout-heading';
-          heading.textContent = label.textContent;
-          subList.prepend(heading);
-        }
-      }
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        }
-      });
-    });
+
+  // Find all nav items with sub-lists (dropdowns) — check .nav-sections first, then any ul > li in nav
+  let allNavItems = navSections
+    ? navSections.querySelectorAll(':scope .default-content-wrapper > ul > li')
+    : [];
+  if (!allNavItems.length) {
+    const primaryUl = nav.querySelector('ul');
+    allNavItems = primaryUl ? primaryUl.querySelectorAll(':scope > li') : [];
   }
+
+  function collapseAllDropdowns() {
+    allNavItems.forEach((item) => item.setAttribute('aria-expanded', 'false'));
+    document.body.classList.remove('nav-flyout-open');
+  }
+
+  allNavItems.forEach((navSection) => {
+    const subList = navSection.querySelector('ul');
+    if (subList) {
+      navSection.classList.add('nav-drop');
+      const label = navSection.querySelector('strong') || navSection.querySelector('a');
+      if (label && !subList.querySelector('.nav-flyout-heading')) {
+        const heading = document.createElement('li');
+        heading.className = 'nav-flyout-heading';
+        heading.textContent = label.textContent;
+        subList.prepend(heading);
+      }
+    }
+    navSection.addEventListener('click', () => {
+      if (isDesktop.matches) {
+        const expanded = navSection.getAttribute('aria-expanded') === 'true';
+        collapseAllDropdowns();
+        navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        document.body.classList.toggle('nav-flyout-open', !expanded);
+      }
+    });
+  });
 
   // Add language selector and search icon to nav-tools
   const navTools = nav.querySelector('.nav-tools');
@@ -200,6 +216,12 @@ export default async function decorate(block) {
       document.body.style.overflowY = '';
     }
   });
+
+  // Backdrop overlay for flyout blur effect
+  const backdrop = document.createElement('div');
+  backdrop.className = 'nav-flyout-backdrop';
+  backdrop.addEventListener('click', () => collapseAllDropdowns());
+  document.body.append(backdrop);
 
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
