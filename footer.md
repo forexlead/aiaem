@@ -19,4 +19,4 @@ Merkle is a data broker under Texas law. To conduct business in Texas, a data br
 
 ---
 
-&copy; 2026 Merkle
+[a dentsu company](https://www.dentsu.com/) &bull; &copy; 2026 Merkle
