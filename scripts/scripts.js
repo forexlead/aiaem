@@ -167,6 +167,11 @@ async function loadLazy(doc) {
   loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
+
+  if (window.location.pathname.endsWith('/work') || window.location.pathname.endsWith('/work.html')) {
+    loadCSS(`${window.hlx.codeBasePath}/styles/work-page.css`);
+  }
+
   loadFonts();
 }
 
