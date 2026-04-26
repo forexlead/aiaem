@@ -338,6 +338,8 @@ header nav .nav-sections ul > li > ul > li {
     text-transform: none;
   }
 
+  /* stylelint-disable no-descending-specificity */
+
   /* Flyout panel for nav items (fallback when outside .nav-sections) */
   header nav li.nav-drop[aria-expanded='true'] > ul {
     display: block;
@@ -372,6 +374,8 @@ header nav .nav-sections ul > li > ul > li {
     font-weight: 700;
     text-transform: none;
   }
+
+  /* stylelint-enable no-descending-specificity */
 }
 
 /* tools - Language selector, Search, Contact Us CTA */

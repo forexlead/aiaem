@@ -153,7 +153,7 @@ export default async function decorate(block) {
 
   const navSections = nav.querySelector('.nav-sections');
 
-  // Find all nav items with sub-lists (dropdowns) — check .nav-sections first, then any ul > li in nav
+  // Find nav items with dropdowns — .nav-sections or direct nav children
   let allNavItems = navSections
     ? navSections.querySelectorAll(':scope .default-content-wrapper > ul > li')
     : [];
