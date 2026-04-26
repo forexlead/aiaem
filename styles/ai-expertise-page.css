@@ -1,12 +1,10 @@
 /* AI Expertise Page Styles
  * Matches original merkle.com/en/ai-expertise layout
- * Sections: hero (dark), AI innovation panels (navy), case studies (white),
- * insights (dark), partnerships (navy), leadership (dark)
  */
 
-/* stylelint-disable no-descending-specificity, no-duplicate-selectors */
+/* stylelint-disable no-descending-specificity, no-duplicate-selectors, declaration-block-no-duplicate-properties */
 
-/* === FULL PAGE: Dark background by default === */
+/* === FULL PAGE: Dark background === */
 .section.cards-container {
   background-color: #000;
   color: #fff;
@@ -21,27 +19,50 @@
   padding: var(--section-padding);
 }
 
-/* === HERO SECTION === */
+/* === HERO: Background image with text overlay === */
 .section.cards-container > .default-content-wrapper:first-child {
-  padding-top: var(--spacing-xxl);
-  padding-bottom: var(--spacing-xl);
-  text-align: center;
+  position: relative;
+  padding: 0 var(--spacing-m);
+  text-align: left;
+  max-width: none;
 }
 
-.section.cards-container > .default-content-wrapper:first-child h2:first-of-type {
-  font-size: 52px;
+/* Hero background image — contained to hero area only */
+.section.cards-container > .default-content-wrapper:first-child > p:first-child {
+  position: relative;
+  margin: 0;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.section.cards-container > .default-content-wrapper:first-child > p:first-child img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 0;
+  margin: 0;
+  display: block;
+}
+
+/* Hero heading */
+.section.cards-container > .default-content-wrapper:first-child h2#ai-innovation-at-merkle {
+  font-size: 44px;
   font-weight: 400;
   line-height: 1.1;
   color: #fff;
   margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-l);
+  max-width: 700px;
 }
 
+/* Hero description */
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(3) {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   color: rgb(255 255 255 / 80%);
   max-width: 700px;
-  margin: 0 auto var(--spacing-m);
+  margin: 0 0 var(--spacing-m);
 }
 
 /* "Our insights" CTA */
@@ -54,28 +75,99 @@
   font-weight: var(--button-font-weight);
   text-transform: var(--button-text-transform);
   text-decoration: none;
+  margin-bottom: var(--spacing-xl);
 }
 
-/* Hide video player noise paragraphs and broken links */
-.section.cards-container > .default-content-wrapper:first-child > p:nth-child(5),
-.section.cards-container > .default-content-wrapper:first-child > p:nth-child(n+6):nth-child(-n+44),
+/* Hide video player noise (indexes 4 through 33) */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(n+5):nth-child(-n+34),
 .section.cards-container > .default-content-wrapper:first-child > ul:first-of-type {
   display: none;
 }
 
-/* === AI INNOVATION PANELS (FOR ENTERPRISE / FOR CUSTOMER EXPERIENCE) === */
-.section.cards-container > .default-content-wrapper:first-child > p:nth-child(n+45) {
+/* === AI INNOVATION PANELS === */
+
+/* Container for both panels — use CSS to create side-by-side layout */
+
+/* Panel 1: "AI INNOVATION / FOR ENTERPRISE" = children 35-39 */
+
+/* Panel 2: "AI INNOVATION / FOR CUSTOMER EXPERIENCE" = children 40-44 */
+
+/* "AI INNOVATION" pretitle (index 34 and 39) */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(35),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(40) {
   display: block;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: var(--spacing-xs);
+  padding-top: var(--spacing-l);
+  background-color: var(--brand-navy);
+  border-radius: 16px 16px 0 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* Style the "AI INNOVATION" pretitle labels */
-.section.cards-container > .default-content-wrapper:first-child > p {
+/* "FOR ENTERPRISE" / "FOR CUSTOMER EXPERIENCE" headings */
+.section.cards-container > .default-content-wrapper:first-child h2#for-enterprise,
+.section.cards-container > .default-content-wrapper:first-child h2#for-customer-experience {
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: #fff;
+  margin-bottom: var(--spacing-m);
+  background-color: var(--brand-navy);
+  padding: 0 var(--spacing-l);
+  border-top: none;
+  padding-top: 0;
+}
+
+/* Description paragraphs in panels (indexes 36-37 and 41-42) */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(37),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(38),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(42),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(43) {
+  display: block;
+  color: rgb(255 255 255 / 80%);
+  text-align: center;
+  background-color: var(--brand-navy);
+  padding: 0 var(--spacing-l);
   margin-bottom: var(--spacing-xs);
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+}
+
+/* "Explore Case Studies" CTA links (indexes 38 and 43) */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(39),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(44) {
+  display: block;
+  text-align: center;
+  background-color: var(--brand-navy);
+  padding: 0 var(--spacing-l) var(--spacing-l);
+  border-radius: 0 0 16px 16px;
+  margin-bottom: var(--spacing-m);
+}
+
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(39) a,
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(44) a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: var(--button-border-radius);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+  letter-spacing: 0.05em;
 }
 
 /* === CASE STUDY SECTIONS === */
 
-/* "AI for Enterprise" and "AI for Customer Experience" headings */
 .section.cards-container > .default-content-wrapper:first-child h2#ai-for-enterprise,
 .section.cards-container > .default-content-wrapper:first-child h2#ai-for-customer-experience {
   font-size: 40px;
@@ -87,12 +179,7 @@
   padding-top: var(--spacing-xl);
 }
 
-/* Case study pretitles */
-.section.cards-container > .default-content-wrapper:first-child > p:not(:nth-child(-n+4)) {
-  color: rgb(255 255 255 / 70%);
-}
-
-/* Case study images - make them display nicely */
+/* General images */
 .section.cards-container > .default-content-wrapper:first-child img {
   max-width: 100%;
   border-radius: 8px;
@@ -106,18 +193,15 @@
   font-weight: 400;
 }
 
-/* === AI ESSENTIALS / INSIGHTS SECTION === */
-
-/* "News & Industry Insights" pretitle */
-.section.cards-container > .default-content-wrapper:first-child > p:last-child {
-  margin-bottom: 0;
-}
+/* === AI ESSENTIALS / INSIGHTS === */
 
 .section.cards-container > .default-content-wrapper:first-child h2#ai-essentials-for-business-leaders {
   font-size: 40px;
   font-weight: 400;
   text-align: center;
   margin-bottom: var(--spacing-m);
+  border-top: 2px solid rgb(255 255 255 / 20%);
+  padding-top: var(--spacing-xl);
 }
 
 /* "View All Insights" link as button */
@@ -188,22 +272,20 @@
   font-size: var(--body-font-size-s);
 }
 
-/* === LEADERSHIP + PARTNERSHIPS SECTION === */
+/* === LEADERSHIP + PARTNERSHIPS === */
 .section.cards-container > .default-content-wrapper:nth-child(3) {
   padding-top: var(--spacing-xl);
 }
 
-/* Leadership bios — hide the raw content fragment data */
+/* Hide raw content fragment bios */
 .section.cards-container > .default-content-wrapper:nth-child(3) > ul {
   display: none;
 }
 
-/* "Read Bio" buttons */
 .section.cards-container > .default-content-wrapper:nth-child(3) > p {
   color: rgb(255 255 255 / 80%);
 }
 
-/* Section headings in the last wrapper */
 .section.cards-container > .default-content-wrapper:nth-child(3) h2 {
   font-size: 40px;
   font-weight: 400;
@@ -217,7 +299,6 @@
   border-top: none;
 }
 
-/* Region subheadings (Americas, EMEA, APAC) */
 .section.cards-container > .default-content-wrapper:nth-child(3) h3 {
   font-size: var(--heading-font-size-m);
   font-weight: 700;
@@ -226,7 +307,6 @@
   margin-bottom: var(--spacing-m);
 }
 
-/* Team headshots */
 .section.cards-container > .default-content-wrapper:nth-child(3) > p > img {
   width: 120px;
   height: 120px;
@@ -237,15 +317,9 @@
   margin-right: var(--spacing-m);
 }
 
-/* Team member names and titles inline with headshots */
 .section.cards-container > .default-content-wrapper:nth-child(3) > p > strong {
   color: #fff;
   display: block;
-}
-
-/* "Partnerships" / "Better together" section */
-.section.cards-container > .default-content-wrapper:nth-child(3) h2#better-together {
-  color: #fff;
 }
 
 /* === RESPONSIVE === */
@@ -256,11 +330,73 @@
 }
 
 @media (width >= 900px) {
+  .section.cards-container > .default-content-wrapper:first-child {
+    min-height: 560px;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child h2#ai-innovation-at-merkle {
+    font-size: 56px;
+  }
+
   .section.cards-container .cards > ul {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .section.cards-container > .default-content-wrapper:first-child h2:first-of-type {
-    font-size: 64px;
+  /* Side-by-side panels on desktop */
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(35) {
+    float: left;
+    width: calc(50% - 8px);
+    clear: left;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child h2#for-enterprise {
+    float: left;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(37),
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(38) {
+    float: left;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(39) {
+    float: left;
+    width: calc(50% - 8px);
+    clear: none;
+    margin-right: 16px;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(40) {
+    float: right;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child h2#for-customer-experience {
+    float: right;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(42),
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(43) {
+    float: right;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child > p:nth-child(44) {
+    float: right;
+    width: calc(50% - 8px);
+    clear: none;
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child h2#ai-for-enterprise {
+    clear: both;
   }
 }
+
+/* stylelint-enable no-descending-specificity, no-duplicate-selectors, declaration-block-no-duplicate-properties */
