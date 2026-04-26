@@ -125,6 +125,7 @@
   padding: 0 var(--spacing-l);
   text-align: center;
   color: #fff;
+  box-sizing: border-box;
 }
 
 /* "AI INNOVATION" pretitles — top of each card */
@@ -136,6 +137,11 @@
   letter-spacing: 0.08em;
   padding-top: var(--spacing-l);
   border-radius: 16px 16px 0 0;
+}
+
+/* Gap between hero and first panel */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(35) {
+  margin-top: var(--spacing-xl);
 }
 
 /* "FOR ENTERPRISE" / "FOR CUSTOMER EXPERIENCE" headings */
