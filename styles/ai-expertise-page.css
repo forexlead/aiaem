@@ -1,0 +1,266 @@
+/* AI Expertise Page Styles
+ * Matches original merkle.com/en/ai-expertise layout
+ * Sections: hero (dark), AI innovation panels (navy), case studies (white),
+ * insights (dark), partnerships (navy), leadership (dark)
+ */
+
+/* stylelint-disable no-descending-specificity, no-duplicate-selectors */
+
+/* === FULL PAGE: Dark background by default === */
+.section.cards-container {
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+.section.cards-container > div {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--section-padding);
+}
+
+/* === HERO SECTION === */
+.section.cards-container > .default-content-wrapper:first-child {
+  padding-top: var(--spacing-xxl);
+  padding-bottom: var(--spacing-xl);
+  text-align: center;
+}
+
+.section.cards-container > .default-content-wrapper:first-child h2:first-of-type {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: var(--spacing-s);
+}
+
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(3) {
+  font-size: 18px;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 80%);
+  max-width: 700px;
+  margin: 0 auto var(--spacing-m);
+}
+
+/* "Our insights" CTA */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(4) a {
+  display: inline-block;
+  padding: var(--button-padding);
+  background-color: #fff;
+  color: #000;
+  border-radius: var(--button-border-radius);
+  font-weight: var(--button-font-weight);
+  text-transform: var(--button-text-transform);
+  text-decoration: none;
+}
+
+/* Hide video player noise paragraphs and broken links */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(5),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(n+6):nth-child(-n+44),
+.section.cards-container > .default-content-wrapper:first-child > ul:first-of-type {
+  display: none;
+}
+
+/* === AI INNOVATION PANELS (FOR ENTERPRISE / FOR CUSTOMER EXPERIENCE) === */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(n+45) {
+  display: block;
+}
+
+/* Style the "AI INNOVATION" pretitle labels */
+.section.cards-container > .default-content-wrapper:first-child > p {
+  margin-bottom: var(--spacing-xs);
+}
+
+/* === CASE STUDY SECTIONS === */
+
+/* "AI for Enterprise" and "AI for Customer Experience" headings */
+.section.cards-container > .default-content-wrapper:first-child h2#ai-for-enterprise,
+.section.cards-container > .default-content-wrapper:first-child h2#ai-for-customer-experience {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: var(--spacing-l);
+  border-top: 2px solid rgb(255 255 255 / 20%);
+  padding-top: var(--spacing-xl);
+}
+
+/* Case study pretitles */
+.section.cards-container > .default-content-wrapper:first-child > p:not(:nth-child(-n+4)) {
+  color: rgb(255 255 255 / 70%);
+}
+
+/* Case study images - make them display nicely */
+.section.cards-container > .default-content-wrapper:first-child img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: var(--spacing-s) 0 var(--spacing-l);
+}
+
+/* "Learn more" links */
+.section.cards-container > .default-content-wrapper:first-child a[href*="case-studies"] {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+/* === AI ESSENTIALS / INSIGHTS SECTION === */
+
+/* "News & Industry Insights" pretitle */
+.section.cards-container > .default-content-wrapper:first-child > p:last-child {
+  margin-bottom: 0;
+}
+
+.section.cards-container > .default-content-wrapper:first-child h2#ai-essentials-for-business-leaders {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: var(--spacing-m);
+}
+
+/* "View All Insights" link as button */
+.section.cards-container > .default-content-wrapper:first-child a[href*="merkle-now"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid var(--brand-red);
+  border-radius: var(--button-border-radius);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: var(--body-font-size-s);
+}
+
+/* === CARDS BLOCK (Insights grid) === */
+.section.cards-container > .cards-wrapper {
+  padding: var(--spacing-l) var(--section-padding);
+}
+
+.section.cards-container .cards > ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section.cards-container .cards > ul > li {
+  background-color: rgb(255 255 255 / 8%);
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+.section.cards-container .cards > ul > li .cards-card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.section.cards-container .cards > ul > li .cards-card-body {
+  padding: var(--spacing-m);
+}
+
+.section.cards-container .cards > ul > li .cards-card-body p:first-child {
+  color: var(--brand-grey);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.section.cards-container .cards > ul > li .cards-card-body h3 {
+  color: #fff;
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-s);
+}
+
+.section.cards-container .cards > ul > li .cards-card-body a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: var(--body-font-size-s);
+}
+
+/* === LEADERSHIP + PARTNERSHIPS SECTION === */
+.section.cards-container > .default-content-wrapper:nth-child(3) {
+  padding-top: var(--spacing-xl);
+}
+
+/* Leadership bios — hide the raw content fragment data */
+.section.cards-container > .default-content-wrapper:nth-child(3) > ul {
+  display: none;
+}
+
+/* "Read Bio" buttons */
+.section.cards-container > .default-content-wrapper:nth-child(3) > p {
+  color: rgb(255 255 255 / 80%);
+}
+
+/* Section headings in the last wrapper */
+.section.cards-container > .default-content-wrapper:nth-child(3) h2 {
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: var(--spacing-l);
+  padding-top: var(--spacing-xl);
+  border-top: 2px solid rgb(255 255 255 / 20%);
+}
+
+.section.cards-container > .default-content-wrapper:nth-child(3) h2:first-of-type {
+  border-top: none;
+}
+
+/* Region subheadings (Americas, EMEA, APAC) */
+.section.cards-container > .default-content-wrapper:nth-child(3) h3 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 700;
+  color: #fff;
+  margin-top: var(--spacing-l);
+  margin-bottom: var(--spacing-m);
+}
+
+/* Team headshots */
+.section.cards-container > .default-content-wrapper:nth-child(3) > p > img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: var(--spacing-m);
+}
+
+/* Team member names and titles inline with headshots */
+.section.cards-container > .default-content-wrapper:nth-child(3) > p > strong {
+  color: #fff;
+  display: block;
+}
+
+/* "Partnerships" / "Better together" section */
+.section.cards-container > .default-content-wrapper:nth-child(3) h2#better-together {
+  color: #fff;
+}
+
+/* === RESPONSIVE === */
+@media (width >= 600px) {
+  .section.cards-container .cards > ul {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width >= 900px) {
+  .section.cards-container .cards > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section.cards-container > .default-content-wrapper:first-child h2:first-of-type {
+    font-size: 64px;
+  }
+}

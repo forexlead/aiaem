@@ -172,6 +172,10 @@ async function loadLazy(doc) {
     loadCSS(`${window.hlx.codeBasePath}/styles/work-page.css`);
   }
 
+  if (window.location.pathname.endsWith('/ai-expertise') || window.location.pathname.endsWith('/ai-expertise.html')) {
+    loadCSS(`${window.hlx.codeBasePath}/styles/ai-expertise-page.css`);
+  }
+
   loadFonts();
 }
 
