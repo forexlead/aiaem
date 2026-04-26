@@ -92,22 +92,34 @@
 
 /* Panel 2: "AI INNOVATION / FOR CUSTOMER EXPERIENCE" = children 40-44 */
 
-/* "AI INNOVATION" pretitle (index 34 and 39) */
+/* All panel elements: seamless navy background, zero margin */
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(35),
+.section.cards-container > .default-content-wrapper:first-child > h2:nth-child(36),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(37),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(38),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(39),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(40),
+.section.cards-container > .default-content-wrapper:first-child > h2:nth-child(41),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(42),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(43),
+.section.cards-container > .default-content-wrapper:first-child > p:nth-child(44) {
+  display: block;
+  background-color: var(--brand-navy);
+  margin: 0;
+  padding: 0 var(--spacing-l);
+  text-align: center;
+  color: #fff;
+}
+
+/* "AI INNOVATION" pretitles — top of each card */
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(35),
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(40) {
-  display: block;
-  color: #fff;
   text-transform: uppercase;
   font-weight: 700;
   font-size: var(--body-font-size-s);
   letter-spacing: 0.08em;
-  text-align: center;
-  margin-bottom: var(--spacing-xs);
   padding-top: var(--spacing-l);
-  background-color: var(--brand-navy);
   border-radius: 16px 16px 0 0;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 /* "FOR ENTERPRISE" / "FOR CUSTOMER EXPERIENCE" headings */
@@ -116,37 +128,26 @@
   font-size: var(--heading-font-size-l);
   font-weight: 700;
   line-height: 1.2;
-  text-align: center;
-  color: #fff;
-  margin-bottom: var(--spacing-m);
-  background-color: var(--brand-navy);
-  padding: 0 var(--spacing-l);
+  padding-bottom: var(--spacing-m);
   border-top: none;
-  padding-top: 0;
 }
 
-/* Description paragraphs in panels (indexes 36-37 and 41-42) */
+/* Description paragraphs */
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(37),
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(38),
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(42),
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(43) {
-  display: block;
   color: rgb(255 255 255 / 80%);
-  text-align: center;
-  background-color: var(--brand-navy);
-  padding: 0 var(--spacing-l);
-  margin-bottom: var(--spacing-xs);
   font-size: var(--body-font-size-m);
   line-height: 1.5;
+  padding-bottom: var(--spacing-xs);
 }
 
-/* "Explore Case Studies" CTA links (indexes 38 and 43) */
+/* "Explore Case Studies" CTA — bottom of each card */
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(39),
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(44) {
-  display: block;
-  text-align: center;
-  background-color: var(--brand-navy);
-  padding: 0 var(--spacing-l) var(--spacing-l);
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-l);
   border-radius: 0 0 16px 16px;
   margin-bottom: var(--spacing-m);
 }
