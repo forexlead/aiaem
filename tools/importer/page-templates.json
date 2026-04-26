@@ -1,4 +1,7 @@
 {
+  "metadata": {
+    "projectType": "doc"
+  },
   "templates": [
     {
       "name": "homepage",
@@ -103,11 +106,97 @@
     {
       "name": "section-landing",
       "urls": [
-        "https://www.merkle.com/en/ai-expertise.html",
         "https://www.merkle.com/en/careers.html"
       ],
       "description": "Section landing page with hero, feature sections, and CTAs",
       "blocks": []
+    },
+    {
+      "name": "ai-expertise",
+      "urls": [
+        "https://www.merkle.com/en/ai-expertise.html"
+      ],
+      "description": "AI expertise landing page with hero video, AI Innovation sections, case study cards, insights grid, partnerships, and leadership team",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".cmp-teaser-layout-h.mer-smart-crop-video"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            "#enter, #teaser-0c732d2bc9"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            "#enterprise ~ .cmp-teaser-layout-h",
+            "#customer ~ .cmp-teaser-layout-h",
+            "#teasergallerylist-ded9a384c9"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".container.blue-background.full-bleed.bottom-spacer-m",
+          "style": "dark",
+          "blocks": ["hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "AI Innovation Panels",
+          "selector": ".container.responsivegrid.blue-background.full-bleed:has(#enter)",
+          "style": "navy",
+          "blocks": ["columns"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "AI for Enterprise",
+          "selector": ".cmp-teaser-layout-large.cmp-teaser-blue-black.content-center:has(.cmp-teaser__title)",
+          "style": null,
+          "blocks": ["cards"],
+          "defaultContent": [".cmp-teaser-layout-l:has(h2.cmp-teaser__title)"]
+        },
+        {
+          "id": "section-4",
+          "name": "AI for Customer Experience",
+          "selector": ".cmp-teaser-layout-large.grey-background.content-center",
+          "style": null,
+          "blocks": ["cards"],
+          "defaultContent": [".cmp-teaser-layout-l:has(h2.cmp-teaser__title)"]
+        },
+        {
+          "id": "section-5",
+          "name": "AI Essentials Insights",
+          "selector": ".cmp-teaser-layout-large.cmp-teaser-dark.content-center:has(h2)",
+          "style": "dark",
+          "blocks": ["cards"],
+          "defaultContent": [".cmp-teaser-layout-l h2", ".cmp-teaser__action-container"]
+        },
+        {
+          "id": "section-6",
+          "name": "Partnerships",
+          "selector": ".cmp-teaser-layout-large.cmp-teaser-dark.bottom-spacer-l",
+          "style": "navy",
+          "blocks": [],
+          "defaultContent": [".cmp-teaser-layout-l h2", ".cmp-teaser__description", ".cmp-teaser__action-container"]
+        },
+        {
+          "id": "section-7",
+          "name": "Leadership Team",
+          "selector": ".cmp-contentfragmentlist.bio-cf-list",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [".cmp-teaser-layout-l h2", "h3.cmp-contentfragment__title"]
+        }
+      ]
     },
     {
       "name": "about-page",
