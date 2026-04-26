@@ -27,12 +27,11 @@
   max-width: none;
 }
 
-/* Hero background image — absolute, fills the hero area */
+/* Hero background image — absolute behind text content */
 .section.cards-container > .default-content-wrapper:first-child > p:first-child {
+  position: static;
   margin: 0;
-  height: 0;
   padding: 0;
-  overflow: visible;
 }
 
 .section.cards-container > .default-content-wrapper:first-child > p:first-child img {
@@ -40,9 +39,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 480px;
+  height: 420px;
   object-fit: cover;
-  object-position: center;
+  object-position: right center;
   border-radius: 0;
   margin: 0;
   display: block;
@@ -53,24 +52,24 @@
 .section.cards-container > .default-content-wrapper:first-child h2#ai-innovation-at-merkle {
   position: relative;
   z-index: 1;
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.15;
   color: #fff;
   margin-bottom: var(--spacing-s);
-  padding-top: 140px;
+  padding-top: var(--spacing-xxl);
   padding-left: var(--spacing-l);
-  max-width: 600px;
+  max-width: 550px;
 }
 
 /* Hero description — overlaid on image */
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(3) {
   position: relative;
   z-index: 1;
-  font-size: 16px;
-  line-height: 1.5;
-  color: rgb(255 255 255 / 80%);
-  max-width: 600px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgb(255 255 255 / 75%);
+  max-width: 500px;
   margin: 0 0 var(--spacing-m);
   padding-left: var(--spacing-l);
 }
@@ -85,13 +84,14 @@
 
 .section.cards-container > .default-content-wrapper:first-child > p:nth-child(4) a {
   display: inline-block;
-  padding: var(--button-padding);
+  padding: 12px 24px;
   background-color: #fff;
   color: #000;
   border-radius: var(--button-border-radius);
   font-weight: var(--button-font-weight);
   text-transform: var(--button-text-transform);
   text-decoration: none;
+  font-size: var(--body-font-size-s);
 }
 
 /* Hide video player noise (indexes 4 through 33) */
@@ -347,12 +347,13 @@
 }
 
 @media (width >= 900px) {
-  .section.cards-container > .default-content-wrapper:first-child {
-    min-height: 560px;
+  .section.cards-container > .default-content-wrapper:first-child > p:first-child img {
+    height: 480px;
   }
 
   .section.cards-container > .default-content-wrapper:first-child h2#ai-innovation-at-merkle {
-    font-size: 56px;
+    font-size: 48px;
+    padding-top: 100px;
   }
 
   .section.cards-container .cards > ul {
